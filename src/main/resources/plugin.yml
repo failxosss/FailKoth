@@ -2,8 +2,8 @@ name: KothPlugin
 version: '${project.version}'
 main: net.kothplugin.KothPlugin
 api-version: '1.21'
-author: KothPlugin Team
-description: Profesionální King of the Hill (KOTH) plugin s podporou 20 jazyků
+author: Failxos
+description: King of the Hill (KOTH) plugin
 softdepend: [Vault, PlaceholderAPI]
 folia-supported: false
 
