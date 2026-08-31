@@ -1,5 +1,5 @@
 name: KothPlugin
-version: '${project.version}'
+version: '1.0.0'
 main: net.kothplugin.KothPlugin
 api-version: '1.21'
 author: Failxos
