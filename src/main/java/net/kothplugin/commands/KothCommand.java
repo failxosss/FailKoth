@@ -153,6 +153,16 @@ public class KothCommand implements CommandExecutor, TabCompleter {
         }
         net.kothplugin.utils.Cuboid newZone = net.kothplugin.utils.Cuboid.fromLocations(loc, other);
         koth.setZone(newZone);
+
+        // pokud capture point nebyl nastaven ručně (/koth setcapturepoint), přepočti ho na střed zóny
+        if (koth.isCapturePointAuto()) {
+            Location center = new Location(newZone.bukkitWorld(), newZone.getCenterX(), newZone.getCenterY(), newZone.getCenterZ());
+            koth.setCapturePoint(center);
+            if (koth.isFullyConfigured() && koth.getState() == KothState.DISABLED) {
+                koth.setState(KothState.WAITING);
+            }
+        }
+
         plugin.getKothManager().saveAll();
         plugin.getLangManager().send(sender, pos1 ? "setpos.pos1-set" : "setpos.pos2-set", Map.of("name", koth.getName()));
     }
@@ -163,6 +173,7 @@ public class KothCommand implements CommandExecutor, TabCompleter {
         Koth koth = getOrError(sender, args[1]);
         if (koth == null) return;
         koth.setCapturePoint(((Player) sender).getLocation());
+        koth.setCapturePointAuto(false); // od teď se při setpos1/setpos2 už nebude přepočítávat automaticky
         if (koth.isFullyConfigured() && koth.getState() == KothState.DISABLED) {
             koth.setState(KothState.WAITING);
         }
