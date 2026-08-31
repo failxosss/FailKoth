@@ -6,6 +6,7 @@ import net.kothplugin.gui.KothGUI;
 import net.kothplugin.hooks.PlaceholderHook;
 import net.kothplugin.hooks.VaultHook;
 import net.kothplugin.koth.CaptureTaskManager;
+import net.kothplugin.koth.HologramManager;
 import net.kothplugin.koth.KothManager;
 import net.kothplugin.lang.LangManager;
 import net.kothplugin.listeners.GuiListener;
@@ -28,6 +29,7 @@ public class KothPlugin extends JavaPlugin {
     private LangManager langManager;
     private KothManager kothManager;
     private CaptureTaskManager captureTaskManager;
+    private HologramManager hologramManager;
     private StatsManager statsManager;
     private AutoStartScheduler autoStartScheduler;
     private VaultHook vaultHook;
@@ -45,6 +47,7 @@ public class KothPlugin extends JavaPlugin {
         this.statsManager.init();
 
         this.captureTaskManager = new CaptureTaskManager(this);
+        this.hologramManager = new HologramManager(this);
         this.kothManager = new KothManager(this);
         this.kothManager.load();
 
@@ -91,6 +94,9 @@ public class KothPlugin extends JavaPlugin {
         if (captureTaskManager != null) {
             captureTaskManager.shutdownAll();
         }
+        if (hologramManager != null) {
+            hologramManager.removeAll();
+        }
         if (autoStartScheduler != null) {
             autoStartScheduler.stop();
         }
@@ -121,6 +127,10 @@ public class KothPlugin extends JavaPlugin {
 
     public CaptureTaskManager getCaptureTaskManager() {
         return captureTaskManager;
+    }
+
+    public HologramManager getHologramManager() {
+        return hologramManager;
     }
 
     public StatsManager getStatsManager() {
