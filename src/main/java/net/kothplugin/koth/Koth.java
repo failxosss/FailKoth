@@ -22,6 +22,7 @@ public class Koth {
 
     private int captureTimeSeconds = 60;
     private int warmupTimeSeconds = 30;
+    private boolean capturePointAuto = true;
     private final List<String> rewardCommands = new ArrayList<>();
 
     // runtime stav
@@ -58,6 +59,14 @@ public class Koth {
 
     public void setCapturePoint(Location capturePoint) {
         this.capturePoint = capturePoint;
+    }
+
+    public boolean isCapturePointAuto() {
+        return capturePointAuto;
+    }
+
+    public void setCapturePointAuto(boolean capturePointAuto) {
+        this.capturePointAuto = capturePointAuto;
     }
 
     public boolean isFullyConfigured() {
@@ -165,6 +174,7 @@ public class Koth {
         }
         section.set("captureTimeSeconds", captureTimeSeconds);
         section.set("warmupTimeSeconds", warmupTimeSeconds);
+        section.set("capturePointAuto", capturePointAuto);
         section.set("rewardCommands", rewardCommands);
     }
 
@@ -184,6 +194,7 @@ public class Koth {
         }
         koth.setCaptureTimeSeconds(section.getInt("captureTimeSeconds", 60));
         koth.setWarmupTimeSeconds(section.getInt("warmupTimeSeconds", 30));
+        koth.setCapturePointAuto(section.getBoolean("capturePointAuto", true));
         List<String> rewards = section.getStringList("rewardCommands");
         if (rewards != null) {
             koth.getRewardCommands().addAll(rewards);
