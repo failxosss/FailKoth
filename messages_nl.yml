@@ -1,0 +1,139 @@
+# Taal: Nederlands (nl)
+prefix: "&8[&6KOTH&8] &r"
+
+general:
+  no-permission: "&cJe hebt geen toestemming om dat te doen."
+  player-only: "&cDit commando kan alleen door een speler worden gebruikt."
+  unknown-command: "&cOnbekend commando. Gebruik &e/koth help&c voor een lijst met commando's."
+  reload-success: "&aConfiguratie en taalbestanden zijn opnieuw geladen."
+  invalid-number: "&cDat is geen geldig getal."
+  feature-disabled: "&cDeze functie is momenteel uitgeschakeld in de configuratie."
+  no-koths-found: "&cEr zijn nog geen KOTH-punten aangemaakt."
+  koth-not-found: "&cEen KOTH-punt met de naam &e%name% &cwerd niet gevonden."
+  koth-already-exists: "&cEr bestaat al een KOTH-punt met de naam &e%name%&c."
+
+command:
+  help-header: "&8&m----&r &6&lKOTH Help &8&m----"
+  help-create: "&e/koth create <naam> &7- Maakt een nieuw KOTH-punt aan"
+  help-delete: "&e/koth delete <naam> &7- Verwijdert een KOTH-punt"
+  help-setpos1: "&e/koth setpos1 <naam> &7- Stelt de eerste hoek van de capture-zone in"
+  help-setpos2: "&e/koth setpos2 <naam> &7- Stelt de tweede hoek van de capture-zone in"
+  help-setcapturepoint: "&e/koth setcapturepoint <naam> &7- Stelt de locatie van het capture-punt in"
+  help-start: "&e/koth start <naam> &7- Start een KOTH-evenement"
+  help-stop: "&e/koth stop <naam> &7- Stopt een lopend KOTH-evenement geforceerd"
+  help-list: "&e/koth list &7- Toont alle KOTH-punten"
+  help-info: "&e/koth info <naam> &7- Toont informatie over een KOTH-punt"
+  help-tp: "&e/koth tp <naam> &7- Teleporteert naar een KOTH-punt"
+  help-top: "&e/koth top &7- Toont het klassement"
+  help-gui: "&e/koth gui &7- Opent het KOTH-menu"
+  help-reload: "&e/koth reload &7- Herlaadt de plugin-configuratie"
+  help-setwarmup: "&e/koth setwarmup <naam> <seconden> &7- Stelt de wachttijd voor de start in"
+  help-setcapturetime: "&e/koth setcapturetime <naam> <seconden> &7- Stelt de capture-tijd in"
+  help-setreward: "&e/koth setreward <naam> <commando> &7- Voegt een beloningscommando toe"
+  help-setlang: "&e/koth setlang <code> &7- Wijzigt de taal van de plugin"
+
+create:
+  success: "&aKOTH-punt &e%name% &ais succesvol aangemaakt."
+  usage: "&cGebruik: /koth create <naam>"
+
+delete:
+  success: "&aKOTH-punt &e%name% &ais verwijderd."
+  usage: "&cGebruik: /koth delete <naam>"
+  confirm: "&eVoer het commando binnen 10 seconden opnieuw uit om te bevestigen."
+
+setpos:
+  pos1-set: "&aPositie 1 voor &e%name% &ais ingesteld op jouw locatie."
+  pos2-set: "&aPositie 2 voor &e%name% &ais ingesteld op jouw locatie."
+  capturepoint-set: "&aCapture-punt voor &e%name% &ais ingesteld op jouw locatie."
+
+start:
+  usage: "&cGebruik: /koth start <naam>"
+  already-running: "&cKOTH &e%name% &cis al bezig."
+  missing-region: "&cJe moet beide posities en een capture-punt instellen voordat je start."
+  success: "&aKOTH &e%name% &ais gestart!"
+  warmup-broadcast: "&6&lKOTH &e%name% &6&lbegint over &e%seconds% &6&lseconden! Locatie: &e%location%"
+  begin-broadcast: "&a&lKOTH &e%name% &a&lis begonnen! Verover het punt en win!"
+  begin-title: "&6&lKOTH GESTART"
+  begin-subtitle: "&e%name%"
+
+stop:
+  usage: "&cGebruik: /koth stop <naam>"
+  not-running: "&cKOTH &e%name% &cis momenteel niet bezig."
+  success: "&aKOTH &e%name% &ais gestopt."
+  broadcast: "&c&lKOTH &e%name% &c&lis geforceerd gestopt door een beheerder."
+
+capture:
+  entered-zone: "&eJe bent de capture-zone van &6%name% &ebinnengegaan."
+  left-zone: "&eJe hebt de capture-zone van &6%name% &everlaten."
+  progress-actionbar: "&6Bezig met veroveren van %name%: &e%progress%%% &7(nog %time%s)"
+  progress-bossbar: "&6%name% &7- &e%progress%%%"
+  contested: "&cHet punt wordt betwist! Verovering gepauzeerd."
+  decaying: "&7Niemand houdt het punt vast. Voortgang neemt af: &e%progress%%%"
+  need-team: "&cJe moet in een team zitten om dit punt te veroveren."
+  wrong-region-owner: "&7Dit punt wordt momenteel beheerst door &e%owner%&7."
+
+win:
+  broadcast: "&6&l%player% &e&lheeft &6&l%name% &e&lveroverd en het KOTH-evenement gewonnen!"
+  broadcast-team: "&6&lTeam %team% &e&lheeft &6&l%name% &e&lveroverd en het KOTH-evenement gewonnen!"
+  title: "&6&lOVERWINNING!"
+  subtitle: "&eJe hebt %name% veroverd!"
+  personal-message: "&aGefeliciteerd! Je hebt het KOTH-evenement bij &e%name% &agewonnen."
+  rewards-given: "&aJe beloningen zijn toegekend."
+
+end:
+  no-winner-broadcast: "&7KOTH &e%name% &7is geëindigd zonder winnaar."
+  timeout-broadcast: "&7KOTH &e%name% &7heeft de tijdslimiet bereikt."
+
+info:
+  header: "&8&m----&r &6&lKOTH: %name% &8&m----"
+  state: "&7Status: &e%state%"
+  world: "&7Wereld: &e%world%"
+  capture-time: "&7Capture-tijd: &e%time%s"
+  warmup-time: "&7Wachttijd: &e%time%s"
+  owner: "&7Huidige eigenaar: &e%owner%"
+  wins: "&7Totaal aantal veroveringen: &e%wins%"
+  rewards-count: "&7Beloningscommando's: &e%count%"
+
+list:
+  header: "&8&m----&r &6&lKOTH-punten &8&m----"
+  entry: "&e%name% &7- &f%state%"
+
+top:
+  header: "&8&m----&r &6&lKOTH-klassement &8&m----"
+  entry: "&e#%rank% &f%player% &7- &6%wins% overwinningen"
+  empty: "&7Er zijn nog geen statistieken geregistreerd."
+  your-rank: "&7Jouw positie: &e#%rank% &7(&6%wins% overwinningen&7)"
+
+gui:
+  title: "&8&lKOTH Menu"
+  item-name: "&6&l%name%"
+  item-lore-state: "&7Status: &e%state%"
+  item-lore-world: "&7Wereld: &e%world%"
+  item-lore-click: "&eKlik om te teleporteren"
+  admin-title: "&8&lKOTH Adminpaneel"
+  no-koths: "&7Er zijn geen KOTH-punten om weer te geven."
+  back-button: "&cTerug"
+  next-page: "&aVolgende pagina"
+  prev-page: "&aVorige pagina"
+
+states:
+  disabled: "Uitgeschakeld"
+  waiting: "Wachtend"
+  warmup: "Begint binnenkort"
+  active: "Actief"
+  capturing: "Wordt veroverd"
+  captured: "Veroverd"
+  ending: "Eindigt"
+
+reward:
+  added: "&aBeloningscommando toegevoegd aan &e%name%&a."
+  removed: "&aBeloningscommando verwijderd van &e%name%&a."
+  usage-add: "&cGebruik: /koth setreward <naam> <commando>"
+
+lang:
+  changed: "&aDe pluginTaal is gewijzigd naar &e%lang%&a."
+  invalid: "&cOnbekende taalcode &e%lang%&c. Beschikbaar: &e%available%"
+  usage: "&cGebruik: /koth setlang <code>"
+
+placeholder:
+  no-active-koth: "Geen"

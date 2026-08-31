@@ -1,0 +1,139 @@
+# Мова: Українська (uk)
+prefix: "&8[&6KOTH&8] &r"
+
+general:
+  no-permission: "&cУ тебе немає прав для цієї дії."
+  player-only: "&cЦю команду може використовувати лише гравець."
+  unknown-command: "&cНевідома команда. Використай &e/koth help&c для списку команд."
+  reload-success: "&aКонфігурацію та мовні файли перезавантажено."
+  invalid-number: "&cЦе не є дійсним числом."
+  feature-disabled: "&cЦя функція наразі вимкнена в конфігурації."
+  no-koths-found: "&cЩе не створено жодної точки KOTH."
+  koth-not-found: "&cТочку KOTH з назвою &e%name% &cне знайдено."
+  koth-already-exists: "&cТочка KOTH з назвою &e%name% &cвже існує."
+
+command:
+  help-header: "&8&m----&r &6&lДовідка KOTH &8&m----"
+  help-create: "&e/koth create <назва> &7- Створити нову точку KOTH"
+  help-delete: "&e/koth delete <назва> &7- Видалити точку KOTH"
+  help-setpos1: "&e/koth setpos1 <назва> &7- Встановити перший кут зони захоплення"
+  help-setpos2: "&e/koth setpos2 <назва> &7- Встановити другий кут зони захоплення"
+  help-setcapturepoint: "&e/koth setcapturepoint <назва> &7- Встановити точку захоплення"
+  help-start: "&e/koth start <назва> &7- Розпочати подію KOTH"
+  help-stop: "&e/koth stop <назва> &7- Примусово зупинити подію KOTH"
+  help-list: "&e/koth list &7- Показати список усіх точок KOTH"
+  help-info: "&e/koth info <назва> &7- Показати інформацію про точку KOTH"
+  help-tp: "&e/koth tp <назва> &7- Телепортуватися до точки KOTH"
+  help-top: "&e/koth top &7- Показати таблицю лідерів"
+  help-gui: "&e/koth gui &7- Відкрити меню KOTH"
+  help-reload: "&e/koth reload &7- Перезавантажити конфігурацію плагіна"
+  help-setwarmup: "&e/koth setwarmup <назва> <секунди> &7- Встановити час відліку перед стартом"
+  help-setcapturetime: "&e/koth setcapturetime <назва> <секунди> &7- Встановити час захоплення"
+  help-setreward: "&e/koth setreward <назва> <команда> &7- Додати команду нагороди"
+  help-setlang: "&e/koth setlang <код> &7- Змінити мову плагіна"
+
+create:
+  success: "&aТочку KOTH &e%name% &aуспішно створено."
+  usage: "&cВикористання: /koth create <назва>"
+
+delete:
+  success: "&aТочку KOTH &e%name% &aвидалено."
+  usage: "&cВикористання: /koth delete <назва>"
+  confirm: "&eПовтори команду протягом 10 секунд для підтвердження видалення."
+
+setpos:
+  pos1-set: "&aПозицію 1 для &e%name% &aвстановлено за твоїм місцезнаходженням."
+  pos2-set: "&aПозицію 2 для &e%name% &aвстановлено за твоїм місцезнаходженням."
+  capturepoint-set: "&aТочку захоплення для &e%name% &aвстановлено за твоїм місцезнаходженням."
+
+start:
+  usage: "&cВикористання: /koth start <назва>"
+  already-running: "&cKOTH &e%name% &cвже триває."
+  missing-region: "&cПеред запуском потрібно встановити обидві позиції та точку захоплення."
+  success: "&aKOTH &e%name% &aрозпочато!"
+  warmup-broadcast: "&6&lKOTH &e%name% &6&lрозпочнеться через &e%seconds% &6&lсекунд! Локація: &e%location%"
+  begin-broadcast: "&a&lKOTH &e%name% &a&lрозпочався! Захопи точку та перемагай!"
+  begin-title: "&6&lKOTH РОЗПОЧАВСЯ"
+  begin-subtitle: "&e%name%"
+
+stop:
+  usage: "&cВикористання: /koth stop <назва>"
+  not-running: "&cKOTH &e%name% &cнаразі не триває."
+  success: "&aKOTH &e%name% &aзупинено."
+  broadcast: "&c&lKOTH &e%name% &c&lбуло примусово зупинено адміністратором."
+
+capture:
+  entered-zone: "&eТи увійшов у зону захоплення &6%name%&e."
+  left-zone: "&eТи покинув зону захоплення &6%name%&e."
+  progress-actionbar: "&6Захоплення %name%: &e%progress%%% &7(залишилось %time%с)"
+  progress-bossbar: "&6%name% &7- &e%progress%%%"
+  contested: "&cТочка оспорюється! Захоплення призупинено."
+  decaying: "&7Ніхто не утримує точку. Прогрес знижується: &e%progress%%%"
+  need-team: "&cДля захоплення цієї точки потрібно бути в команді."
+  wrong-region-owner: "&7Цю точку зараз контролює &e%owner%&7."
+
+win:
+  broadcast: "&6&l%player% &e&lзахопив &6&l%name%&e&l і переміг у події KOTH!"
+  broadcast-team: "&6&lКоманда %team% &e&lзахопила &6&l%name%&e&l і перемогла у події KOTH!"
+  title: "&6&lПЕРЕМОГА!"
+  subtitle: "&eТи захопив %name%!"
+  personal-message: "&aВітаємо! Ти переміг у події KOTH на &e%name%&a."
+  rewards-given: "&aТвої нагороди видано."
+
+end:
+  no-winner-broadcast: "&7KOTH &e%name% &7завершився без переможця."
+  timeout-broadcast: "&7У KOTH &e%name% &7вичерпано час."
+
+info:
+  header: "&8&m----&r &6&lKOTH: %name% &8&m----"
+  state: "&7Стан: &e%state%"
+  world: "&7Світ: &e%world%"
+  capture-time: "&7Час захоплення: &e%time%с"
+  warmup-time: "&7Час відліку: &e%time%с"
+  owner: "&7Поточний власник: &e%owner%"
+  wins: "&7Всього захоплень: &e%wins%"
+  rewards-count: "&7Команди нагород: &e%count%"
+
+list:
+  header: "&8&m----&r &6&lТочки KOTH &8&m----"
+  entry: "&e%name% &7- &f%state%"
+
+top:
+  header: "&8&m----&r &6&lТаблиця лідерів KOTH &8&m----"
+  entry: "&e#%rank% &f%player% &7- &6%wins% перемог"
+  empty: "&7Статистику ще не зафіксовано."
+  your-rank: "&7Твоє місце: &e#%rank% &7(&6%wins% перемог&7)"
+
+gui:
+  title: "&8&lМеню KOTH"
+  item-name: "&6&l%name%"
+  item-lore-state: "&7Стан: &e%state%"
+  item-lore-world: "&7Світ: &e%world%"
+  item-lore-click: "&eНатисни для телепортації"
+  admin-title: "&8&lАдмін-панель KOTH"
+  no-koths: "&7Немає точок KOTH для показу."
+  back-button: "&cНазад"
+  next-page: "&aНаступна сторінка"
+  prev-page: "&aПопередня сторінка"
+
+states:
+  disabled: "Вимкнено"
+  waiting: "Очікування"
+  warmup: "Скоро почнеться"
+  active: "Активно"
+  capturing: "Захоплюється"
+  captured: "Захоплено"
+  ending: "Завершується"
+
+reward:
+  added: "&aКоманду нагороди додано до &e%name%&a."
+  removed: "&aКоманду нагороди видалено з &e%name%&a."
+  usage-add: "&cВикористання: /koth setreward <назва> <команда>"
+
+lang:
+  changed: "&aМову плагіна змінено на &e%lang%&a."
+  invalid: "&cНевідомий код мови &e%lang%&c. Доступні: &e%available%"
+  usage: "&cВикористання: /koth setlang <код>"
+
+placeholder:
+  no-active-koth: "Немає"

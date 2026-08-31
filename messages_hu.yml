@@ -1,0 +1,139 @@
+# Nyelv: Magyar (hu)
+prefix: "&8[&6KOTH&8] &r"
+
+general:
+  no-permission: "&cNincs jogosultságod ehhez."
+  player-only: "&cEzt a parancsot csak játékos használhatja."
+  unknown-command: "&cIsmeretlen parancs. Használd a &e/koth help&c parancsot a lista megtekintéséhez."
+  reload-success: "&aA konfiguráció és a nyelvi fájlok újratöltve."
+  invalid-number: "&cEz nem érvényes szám."
+  feature-disabled: "&cEz a funkció jelenleg le van tiltva a konfigurációban."
+  no-koths-found: "&cMég nem lett KOTH pont létrehozva."
+  koth-not-found: "&cNem található &e%name% &cnevű KOTH pont."
+  koth-already-exists: "&e%name% &cnevű KOTH pont már létezik."
+
+command:
+  help-header: "&8&m----&r &6&lKOTH Súgó &8&m----"
+  help-create: "&e/koth create <név> &7- Új KOTH pont létrehozása"
+  help-delete: "&e/koth delete <név> &7- KOTH pont törlése"
+  help-setpos1: "&e/koth setpos1 <név> &7- Az elfoglalási zóna első sarkának beállítása"
+  help-setpos2: "&e/koth setpos2 <név> &7- Az elfoglalási zóna második sarkának beállítása"
+  help-setcapturepoint: "&e/koth setcapturepoint <név> &7- Az elfoglalási pont helyének beállítása"
+  help-start: "&e/koth start <név> &7- KOTH esemény indítása"
+  help-stop: "&e/koth stop <név> &7- Futó KOTH esemény kényszerített leállítása"
+  help-list: "&e/koth list &7- Az összes KOTH pont listázása"
+  help-info: "&e/koth info <név> &7- Információ megjelenítése egy KOTH pontról"
+  help-tp: "&e/koth tp <név> &7- Teleportálás egy KOTH ponthoz"
+  help-top: "&e/koth top &7- Ranglista megjelenítése"
+  help-gui: "&e/koth gui &7- KOTH menü megnyitása"
+  help-reload: "&e/koth reload &7- A plugin konfigurációjának újratöltése"
+  help-setwarmup: "&e/koth setwarmup <név> <másodperc> &7- Az indítás előtti várakozási idő beállítása"
+  help-setcapturetime: "&e/koth setcapturetime <név> <másodperc> &7- Az elfoglalási idő beállítása"
+  help-setreward: "&e/koth setreward <név> <parancs> &7- Jutalomparancs hozzáadása"
+  help-setlang: "&e/koth setlang <kód> &7- A plugin nyelvének módosítása"
+
+create:
+  success: "&aA(z) &e%name% &aKOTH pont sikeresen létrejött."
+  usage: "&cHasználat: /koth create <név>"
+
+delete:
+  success: "&aA(z) &e%name% &aKOTH pont törölve."
+  usage: "&cHasználat: /koth delete <név>"
+  confirm: "&eFuttasd le újra a parancsot 10 másodpercen belül a törlés megerősítéséhez."
+
+setpos:
+  pos1-set: "&aA(z) &e%name% &a1. pozíciója a jelenlegi helyedre lett állítva."
+  pos2-set: "&aA(z) &e%name% &a2. pozíciója a jelenlegi helyedre lett állítva."
+  capturepoint-set: "&aA(z) &e%name% &aelfoglalási pontja a jelenlegi helyedre lett állítva."
+
+start:
+  usage: "&cHasználat: /koth start <név>"
+  already-running: "&cA(z) &e%name% &cKOTH már fut."
+  missing-region: "&cIndítás előtt be kell állítanod mindkét pozíciót és egy elfoglalási pontot."
+  success: "&aA(z) &e%name% &aKOTH elindult!"
+  warmup-broadcast: "&6&lA(z) &e%name% &6&lKOTH &e%seconds% &6&lmásodperc múlva kezdődik! Helyszín: &e%location%"
+  begin-broadcast: "&a&lA(z) &e%name% &a&lKOTH elkezdődött! Foglald el a pontot és nyerj!"
+  begin-title: "&6&lKOTH ELINDULT"
+  begin-subtitle: "&e%name%"
+
+stop:
+  usage: "&cHasználat: /koth stop <név>"
+  not-running: "&cA(z) &e%name% &cKOTH jelenleg nem fut."
+  success: "&aA(z) &e%name% &aKOTH leállítva."
+  broadcast: "&c&lA(z) &e%name% &c&lKOTH-t egy adminisztrátor kényszerítve leállította."
+
+capture:
+  entered-zone: "&eBeléptél a(z) &6%name% &eelfoglalási zónájába."
+  left-zone: "&eElhagytad a(z) &6%name% &eelfoglalási zónáját."
+  progress-actionbar: "&6%name% elfoglalása: &e%progress%%% &7(%time% mp van hátra)"
+  progress-bossbar: "&6%name% &7- &e%progress%%%"
+  contested: "&cA pont vitatott! Az elfoglalás szüneteltetve."
+  decaying: "&7Senki sem tartja a pontot. A haladás csökken: &e%progress%%%"
+  need-team: "&cCsapatban kell lenned ahhoz, hogy elfoglald ezt a pontot."
+  wrong-region-owner: "&7Ezt a pontot jelenleg &e%owner% &7irányítja."
+
+win:
+  broadcast: "&6&l%player% &e&lelfoglalta a(z) &6&l%name%&e&l pontot és megnyerte a KOTH eseményt!"
+  broadcast-team: "&6&l%team% csapat &e&lelfoglalta a(z) &6&l%name%&e&l pontot és megnyerte a KOTH eseményt!"
+  title: "&6&lGYŐZELEM!"
+  subtitle: "&eElfoglaltad: %name%!"
+  personal-message: "&aGratulálunk! Megnyerted a KOTH eseményt itt: &e%name%&a."
+  rewards-given: "&aA jutalmaid megkapva."
+
+end:
+  no-winner-broadcast: "&7A(z) &e%name% &7KOTH győztes nélkül ért véget."
+  timeout-broadcast: "&7A(z) &e%name% &7KOTH ideje lejárt."
+
+info:
+  header: "&8&m----&r &6&lKOTH: %name% &8&m----"
+  state: "&7Állapot: &e%state%"
+  world: "&7Világ: &e%world%"
+  capture-time: "&7Elfoglalási idő: &e%time% mp"
+  warmup-time: "&7Várakozási idő: &e%time% mp"
+  owner: "&7Jelenlegi tulajdonos: &e%owner%"
+  wins: "&7Összes elfoglalás: &e%wins%"
+  rewards-count: "&7Jutalomparancsok: &e%count%"
+
+list:
+  header: "&8&m----&r &6&lKOTH pontok &8&m----"
+  entry: "&e%name% &7- &f%state%"
+
+top:
+  header: "&8&m----&r &6&lKOTH ranglista &8&m----"
+  entry: "&e#%rank% &f%player% &7- &6%wins% győzelem"
+  empty: "&7Még nincs rögzített statisztika."
+  your-rank: "&7A helyezésed: &e#%rank% &7(&6%wins% győzelem&7)"
+
+gui:
+  title: "&8&lKOTH Menü"
+  item-name: "&6&l%name%"
+  item-lore-state: "&7Állapot: &e%state%"
+  item-lore-world: "&7Világ: &e%world%"
+  item-lore-click: "&eKattints a teleportáláshoz"
+  admin-title: "&8&lKOTH Admin Panel"
+  no-koths: "&7Nincs megjeleníthető KOTH pont."
+  back-button: "&cVissza"
+  next-page: "&aKövetkező oldal"
+  prev-page: "&aElőző oldal"
+
+states:
+  disabled: "Letiltva"
+  waiting: "Várakozik"
+  warmup: "Hamarosan kezdődik"
+  active: "Aktív"
+  capturing: "Elfoglalás alatt"
+  captured: "Elfoglalva"
+  ending: "Véget ér"
+
+reward:
+  added: "&aJutalomparancs hozzáadva a(z) &e%name% &aponthoz."
+  removed: "&aJutalomparancs eltávolítva a(z) &e%name% &apontból."
+  usage-add: "&cHasználat: /koth setreward <név> <parancs>"
+
+lang:
+  changed: "&aA plugin nyelve megváltozott erre: &e%lang%&a."
+  invalid: "&cIsmeretlen nyelvi kód: &e%lang%&c. Elérhető: &e%available%"
+  usage: "&cHasználat: /koth setlang <kód>"
+
+placeholder:
+  no-active-koth: "Nincs"

@@ -1,0 +1,139 @@
+# Språk: Norsk (no)
+prefix: "&8[&6KOTH&8] &r"
+
+general:
+  no-permission: "&cDu har ikke tillatelse til å gjøre dette."
+  player-only: "&cDenne kommandoen kan kun brukes av en spiller."
+  unknown-command: "&cUkjent kommando. Bruk &e/koth help&c for en liste over kommandoer."
+  reload-success: "&aKonfigurasjonen og språkfilene har blitt lastet inn på nytt."
+  invalid-number: "&cDette er ikke et gyldig tall."
+  feature-disabled: "&cDenne funksjonen er for øyeblikket deaktivert i konfigurasjonen."
+  no-koths-found: "&cIngen KOTH-punkter er opprettet ennå."
+  koth-not-found: "&cEt KOTH-punkt kalt &e%name% &cble ikke funnet."
+  koth-already-exists: "&cEt KOTH-punkt kalt &e%name% &cfinnes allerede."
+
+command:
+  help-header: "&8&m----&r &6&lKOTH Hjelp &8&m----"
+  help-create: "&e/koth create <navn> &7- Oppretter et nytt KOTH-punkt"
+  help-delete: "&e/koth delete <navn> &7- Sletter et KOTH-punkt"
+  help-setpos1: "&e/koth setpos1 <navn> &7- Setter det første hjørnet av erobringssonen"
+  help-setpos2: "&e/koth setpos2 <navn> &7- Setter det andre hjørnet av erobringssonen"
+  help-setcapturepoint: "&e/koth setcapturepoint <navn> &7- Setter plasseringen av erobringspunktet"
+  help-start: "&e/koth start <navn> &7- Starter et KOTH-event"
+  help-stop: "&e/koth stop <navn> &7- Tvinger et pågående KOTH-event til å stoppe"
+  help-list: "&e/koth list &7- Lister alle KOTH-punkter"
+  help-info: "&e/koth info <navn> &7- Viser informasjon om et KOTH-punkt"
+  help-tp: "&e/koth tp <navn> &7- Teleporterer til et KOTH-punkt"
+  help-top: "&e/koth top &7- Viser resultatlisten"
+  help-gui: "&e/koth gui &7- Åpner KOTH-menyen"
+  help-reload: "&e/koth reload &7- Laster inn plugin-konfigurasjonen på nytt"
+  help-setwarmup: "&e/koth setwarmup <navn> <sekunder> &7- Setter ventetiden før start"
+  help-setcapturetime: "&e/koth setcapturetime <navn> <sekunder> &7- Setter erobringstiden"
+  help-setreward: "&e/koth setreward <navn> <kommando> &7- Legger til en belønningskommando"
+  help-setlang: "&e/koth setlang <kode> &7- Endrer plugin-språket"
+
+create:
+  success: "&aKOTH-punktet &e%name% &able opprettet."
+  usage: "&cBruk: /koth create <navn>"
+
+delete:
+  success: "&aKOTH-punktet &e%name% &aer blitt slettet."
+  usage: "&cBruk: /koth delete <navn>"
+  confirm: "&eKjør kommandoen igjen innen 10 sekunder for å bekrefte slettingen."
+
+setpos:
+  pos1-set: "&aPosisjon 1 for &e%name% &aer satt til din posisjon."
+  pos2-set: "&aPosisjon 2 for &e%name% &aer satt til din posisjon."
+  capturepoint-set: "&aErobringspunktet for &e%name% &aer satt til din posisjon."
+
+start:
+  usage: "&cBruk: /koth start <navn>"
+  already-running: "&cKOTH &e%name% &ckjører allerede."
+  missing-region: "&cDu må angi begge posisjonene og et erobringspunkt før start."
+  success: "&aKOTH &e%name% &aer startet!"
+  warmup-broadcast: "&6&lKOTH &e%name% &6&lstarter om &e%seconds% &6&lsekunder! Sted: &e%location%"
+  begin-broadcast: "&a&lKOTH &e%name% &a&lhar startet! Erobre punktet og vinn!"
+  begin-title: "&6&lKOTH STARTET"
+  begin-subtitle: "&e%name%"
+
+stop:
+  usage: "&cBruk: /koth stop <navn>"
+  not-running: "&cKOTH &e%name% &ckjører ikke for øyeblikket."
+  success: "&aKOTH &e%name% &aer stoppet."
+  broadcast: "&c&lKOTH &e%name% &c&lble tvangsstoppet av en administrator."
+
+capture:
+  entered-zone: "&eDu har gått inn i erobringssonen til &6%name%&e."
+  left-zone: "&eDu har forlatt erobringssonen til &6%name%&e."
+  progress-actionbar: "&6Erobrer %name%: &e%progress%%% &7(%time%s igjen)"
+  progress-bossbar: "&6%name% &7- &e%progress%%%"
+  contested: "&cPunktet er omstridt! Erobring er satt på pause."
+  decaying: "&7Ingen holder punktet. Fremgangen synker: &e%progress%%%"
+  need-team: "&cDu må være i et lag for å erobre dette punktet."
+  wrong-region-owner: "&7Dette punktet kontrolleres for øyeblikket av &e%owner%&7."
+
+win:
+  broadcast: "&6&l%player% &e&lerobret &6&l%name%&e&l og vant KOTH-eventet!"
+  broadcast-team: "&6&lLaget %team% &e&lerobret &6&l%name%&e&l og vant KOTH-eventet!"
+  title: "&6&lSEIER!"
+  subtitle: "&eDu erobret %name%!"
+  personal-message: "&aGratulerer! Du vant KOTH-eventet ved &e%name%&a."
+  rewards-given: "&aBelønningene dine er gitt."
+
+end:
+  no-winner-broadcast: "&7KOTH &e%name% &7endte uten vinner."
+  timeout-broadcast: "&7KOTH &e%name% &7fikk tidsavbrudd."
+
+info:
+  header: "&8&m----&r &6&lKOTH: %name% &8&m----"
+  state: "&7Status: &e%state%"
+  world: "&7Verden: &e%world%"
+  capture-time: "&7Erobringstid: &e%time%s"
+  warmup-time: "&7Ventetid: &e%time%s"
+  owner: "&7Nåværende eier: &e%owner%"
+  wins: "&7Totale erobringer: &e%wins%"
+  rewards-count: "&7Belønningskommandoer: &e%count%"
+
+list:
+  header: "&8&m----&r &6&lKOTH-punkter &8&m----"
+  entry: "&e%name% &7- &f%state%"
+
+top:
+  header: "&8&m----&r &6&lKOTH Resultatliste &8&m----"
+  entry: "&e#%rank% &f%player% &7- &6%wins% seire"
+  empty: "&7Ingen statistikk er registrert ennå."
+  your-rank: "&7Din plassering: &e#%rank% &7(&6%wins% seire&7)"
+
+gui:
+  title: "&8&lKOTH Meny"
+  item-name: "&6&l%name%"
+  item-lore-state: "&7Status: &e%state%"
+  item-lore-world: "&7Verden: &e%world%"
+  item-lore-click: "&eKlikk for å teleportere"
+  admin-title: "&8&lKOTH Adminpanel"
+  no-koths: "&7Det er ingen KOTH-punkter å vise."
+  back-button: "&cTilbake"
+  next-page: "&aNeste side"
+  prev-page: "&aForrige side"
+
+states:
+  disabled: "Deaktivert"
+  waiting: "Venter"
+  warmup: "Starter snart"
+  active: "Aktiv"
+  capturing: "Blir erobret"
+  captured: "Erobret"
+  ending: "Avsluttes"
+
+reward:
+  added: "&aBelønningskommando lagt til &e%name%&a."
+  removed: "&aBelønningskommando fjernet fra &e%name%&a."
+  usage-add: "&cBruk: /koth setreward <navn> <kommando>"
+
+lang:
+  changed: "&aPlugin-språket er endret til &e%lang%&a."
+  invalid: "&cUkjent språkkode &e%lang%&c. Tilgjengelige: &e%available%"
+  usage: "&cBruk: /koth setlang <kode>"
+
+placeholder:
+  no-active-koth: "Ingen"

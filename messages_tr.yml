@@ -1,0 +1,139 @@
+# Dil: Türkçe (tr)
+prefix: "&8[&6KOTH&8] &r"
+
+general:
+  no-permission: "&cBunu yapmaya iznin yok."
+  player-only: "&cBu komut yalnızca bir oyuncu tarafından kullanılabilir."
+  unknown-command: "&cBilinmeyen komut. Komut listesi için &e/koth help&c kullan."
+  reload-success: "&aYapılandırma ve dil dosyaları yeniden yüklendi."
+  invalid-number: "&cBu geçerli bir sayı değil."
+  feature-disabled: "&cBu özellik şu anda yapılandırmada devre dışı."
+  no-koths-found: "&cHenüz hiç KOTH noktası oluşturulmadı."
+  koth-not-found: "&e%name% &cadlı bir KOTH noktası bulunamadı."
+  koth-already-exists: "&e%name% &cadlı bir KOTH noktası zaten mevcut."
+
+command:
+  help-header: "&8&m----&r &6&lKOTH Yardım &8&m----"
+  help-create: "&e/koth create <isim> &7- Yeni bir KOTH noktası oluşturur"
+  help-delete: "&e/koth delete <isim> &7- Bir KOTH noktasını siler"
+  help-setpos1: "&e/koth setpos1 <isim> &7- Ele geçirme bölgesinin ilk köşesini ayarlar"
+  help-setpos2: "&e/koth setpos2 <isim> &7- Ele geçirme bölgesinin ikinci köşesini ayarlar"
+  help-setcapturepoint: "&e/koth setcapturepoint <isim> &7- Ele geçirme noktasının konumunu ayarlar"
+  help-start: "&e/koth start <isim> &7- Bir KOTH etkinliği başlatır"
+  help-stop: "&e/koth stop <isim> &7- Devam eden bir KOTH etkinliğini zorla durdurur"
+  help-list: "&e/koth list &7- Tüm KOTH noktalarını listeler"
+  help-info: "&e/koth info <isim> &7- Bir KOTH noktası hakkında bilgi gösterir"
+  help-tp: "&e/koth tp <isim> &7- Bir KOTH noktasına ışınlanır"
+  help-top: "&e/koth top &7- Liderlik tablosunu gösterir"
+  help-gui: "&e/koth gui &7- KOTH menüsünü açar"
+  help-reload: "&e/koth reload &7- Eklenti yapılandırmasını yeniden yükler"
+  help-setwarmup: "&e/koth setwarmup <isim> <saniye> &7- Başlangıç öncesi bekleme süresini ayarlar"
+  help-setcapturetime: "&e/koth setcapturetime <isim> <saniye> &7- Ele geçirme süresini ayarlar"
+  help-setreward: "&e/koth setreward <isim> <komut> &7- Bir ödül komutu ekler"
+  help-setlang: "&e/koth setlang <kod> &7- Eklenti dilini değiştirir"
+
+create:
+  success: "&aKOTH noktası &e%name% &abaşarıyla oluşturuldu."
+  usage: "&cKullanım: /koth create <isim>"
+
+delete:
+  success: "&aKOTH noktası &e%name% &asilindi."
+  usage: "&cKullanım: /koth delete <isim>"
+  confirm: "&eSilmeyi onaylamak için komutu 10 saniye içinde tekrar çalıştır."
+
+setpos:
+  pos1-set: "&e%name% &aiçin 1. konum, bulunduğun yere ayarlandı."
+  pos2-set: "&e%name% &aiçin 2. konum, bulunduğun yere ayarlandı."
+  capturepoint-set: "&e%name% &aiçin ele geçirme noktası bulunduğun yere ayarlandı."
+
+start:
+  usage: "&cKullanım: /koth start <isim>"
+  already-running: "&cKOTH &e%name% &czaten devam ediyor."
+  missing-region: "&cBaşlatmadan önce her iki konumu ve bir ele geçirme noktasını ayarlamalısın."
+  success: "&aKOTH &e%name% &abaşlatıldı!"
+  warmup-broadcast: "&6&lKOTH &e%name% &6&l%seconds% &6&lsaniye içinde başlıyor! Konum: &e%location%"
+  begin-broadcast: "&a&lKOTH &e%name% &a&lbaşladı! Noktayı ele geçir ve kazan!"
+  begin-title: "&6&lKOTH BAŞLADI"
+  begin-subtitle: "&e%name%"
+
+stop:
+  usage: "&cKullanım: /koth stop <isim>"
+  not-running: "&cKOTH &e%name% &cşu anda devam etmiyor."
+  success: "&aKOTH &e%name% &adurduruldu."
+  broadcast: "&c&lKOTH &e%name% &c&lbir yönetici tarafından zorla durduruldu."
+
+capture:
+  entered-zone: "&e&6%name% &eele geçirme bölgesine girdin."
+  left-zone: "&e&6%name% &eele geçirme bölgesinden çıktın."
+  progress-actionbar: "&6%name% ele geçiriliyor: &e%progress%%% &7(%time%sn kaldı)"
+  progress-bossbar: "&6%name% &7- &e%progress%%%"
+  contested: "&cNokta tartışmalı! Ele geçirme duraklatıldı."
+  decaying: "&7Kimse noktayı tutmuyor. İlerleme azalıyor: &e%progress%%%"
+  need-team: "&cBu noktayı ele geçirmek için bir takımda olmalısın."
+  wrong-region-owner: "&7Bu nokta şu anda &e%owner% &7tarafından kontrol ediliyor."
+
+win:
+  broadcast: "&6&l%player% &e&l&6&l%name%&e&l'yı ele geçirdi ve KOTH etkinliğini kazandı!"
+  broadcast-team: "&6&l%team% takımı &e&l&6&l%name%&e&l'yı ele geçirdi ve KOTH etkinliğini kazandı!"
+  title: "&6&lZAFER!"
+  subtitle: "&e%name%'yı ele geçirdin!"
+  personal-message: "&aTebrikler! &e%name% &anoktasındaki KOTH etkinliğini kazandın."
+  rewards-given: "&aÖdüllerin verildi."
+
+end:
+  no-winner-broadcast: "&7KOTH &e%name% &7kazanan olmadan sona erdi."
+  timeout-broadcast: "&7KOTH &e%name% &7süresi doldu."
+
+info:
+  header: "&8&m----&r &6&lKOTH: %name% &8&m----"
+  state: "&7Durum: &e%state%"
+  world: "&7Dünya: &e%world%"
+  capture-time: "&7Ele geçirme süresi: &e%time%sn"
+  warmup-time: "&7Bekleme süresi: &e%time%sn"
+  owner: "&7Mevcut sahip: &e%owner%"
+  wins: "&7Toplam ele geçirme: &e%wins%"
+  rewards-count: "&7Ödül komutları: &e%count%"
+
+list:
+  header: "&8&m----&r &6&lKOTH Noktaları &8&m----"
+  entry: "&e%name% &7- &f%state%"
+
+top:
+  header: "&8&m----&r &6&lKOTH Liderlik Tablosu &8&m----"
+  entry: "&e#%rank% &f%player% &7- &6%wins% galibiyet"
+  empty: "&7Henüz istatistik kaydedilmedi."
+  your-rank: "&7Sıralaman: &e#%rank% &7(&6%wins% galibiyet&7)"
+
+gui:
+  title: "&8&lKOTH Menüsü"
+  item-name: "&6&l%name%"
+  item-lore-state: "&7Durum: &e%state%"
+  item-lore-world: "&7Dünya: &e%world%"
+  item-lore-click: "&eIşınlanmak için tıkla"
+  admin-title: "&8&lKOTH Yönetici Paneli"
+  no-koths: "&7Gösterilecek KOTH noktası yok."
+  back-button: "&cGeri"
+  next-page: "&aSonraki sayfa"
+  prev-page: "&aÖnceki sayfa"
+
+states:
+  disabled: "Devre dışı"
+  waiting: "Bekliyor"
+  warmup: "Yakında başlıyor"
+  active: "Aktif"
+  capturing: "Ele geçiriliyor"
+  captured: "Ele geçirildi"
+  ending: "Bitiyor"
+
+reward:
+  added: "&e%name% &ana ödül komutu eklendi."
+  removed: "&e%name% &andan ödül komutu kaldırıldı."
+  usage-add: "&cKullanım: /koth setreward <isim> <komut>"
+
+lang:
+  changed: "&aEklenti dili &e%lang% &aolarak değiştirildi."
+  invalid: "&cBilinmeyen dil kodu &e%lang%&c. Mevcut olanlar: &e%available%"
+  usage: "&cKullanım: /koth setlang <kod>"
+
+placeholder:
+  no-active-koth: "Yok"

@@ -1,0 +1,139 @@
+# Kieli: Suomi (fi)
+prefix: "&8[&6KOTH&8] &r"
+
+general:
+  no-permission: "&cSinulla ei ole oikeutta tehdä tätä."
+  player-only: "&cTätä komentoa voi käyttää vain pelaaja."
+  unknown-command: "&cTuntematon komento. Käytä &e/koth help&c nähdäksesi komentolistan."
+  reload-success: "&aAsetukset ja kielitiedostot on ladattu uudelleen."
+  invalid-number: "&cTämä ei ole kelvollinen luku."
+  feature-disabled: "&cTämä ominaisuus on tällä hetkellä poistettu käytöstä asetuksissa."
+  no-koths-found: "&cYhtään KOTH-pistettä ei ole vielä luotu."
+  koth-not-found: "&cKOTH-pistettä nimeltä &e%name% &cei löytynyt."
+  koth-already-exists: "&cKOTH-piste nimeltä &e%name% &con jo olemassa."
+
+command:
+  help-header: "&8&m----&r &6&lKOTH-ohje &8&m----"
+  help-create: "&e/koth create <nimi> &7- Luo uuden KOTH-pisteen"
+  help-delete: "&e/koth delete <nimi> &7- Poistaa KOTH-pisteen"
+  help-setpos1: "&e/koth setpos1 <nimi> &7- Asettaa valtausalueen ensimmäisen kulman"
+  help-setpos2: "&e/koth setpos2 <nimi> &7- Asettaa valtausalueen toisen kulman"
+  help-setcapturepoint: "&e/koth setcapturepoint <nimi> &7- Asettaa valtauspisteen sijainnin"
+  help-start: "&e/koth start <nimi> &7- Käynnistää KOTH-tapahtuman"
+  help-stop: "&e/koth stop <nimi> &7- Pysäyttää käynnissä olevan KOTH-tapahtuman väkisin"
+  help-list: "&e/koth list &7- Listaa kaikki KOTH-pisteet"
+  help-info: "&e/koth info <nimi> &7- Näyttää tietoja KOTH-pisteestä"
+  help-tp: "&e/koth tp <nimi> &7- Teleporttaa KOTH-pisteeseen"
+  help-top: "&e/koth top &7- Näyttää tulostaulukon"
+  help-gui: "&e/koth gui &7- Avaa KOTH-valikon"
+  help-reload: "&e/koth reload &7- Lataa liitännäisen asetukset uudelleen"
+  help-setwarmup: "&e/koth setwarmup <nimi> <sekunnit> &7- Asettaa odotusajan ennen aloitusta"
+  help-setcapturetime: "&e/koth setcapturetime <nimi> <sekunnit> &7- Asettaa valtausajan"
+  help-setreward: "&e/koth setreward <nimi> <komento> &7- Lisää palkintokomennon"
+  help-setlang: "&e/koth setlang <koodi> &7- Vaihtaa liitännäisen kielen"
+
+create:
+  success: "&aKOTH-piste &e%name% &aluotiin onnistuneesti."
+  usage: "&cKäyttö: /koth create <nimi>"
+
+delete:
+  success: "&aKOTH-piste &e%name% &apoistettiin."
+  usage: "&cKäyttö: /koth delete <nimi>"
+  confirm: "&eSuorita komento uudelleen 10 sekunnin kuluessa vahvistaaksesi poiston."
+
+setpos:
+  pos1-set: "&aKohteen &e%name% &asijainti 1 asetettiin nykyiseen sijaintiisi."
+  pos2-set: "&aKohteen &e%name% &asijainti 2 asetettiin nykyiseen sijaintiisi."
+  capturepoint-set: "&aKohteen &e%name% &avaltauspiste asetettiin nykyiseen sijaintiisi."
+
+start:
+  usage: "&cKäyttö: /koth start <nimi>"
+  already-running: "&cKOTH &e%name% &con jo käynnissä."
+  missing-region: "&cSinun täytyy asettaa molemmat sijainnit ja valtauspiste ennen aloitusta."
+  success: "&aKOTH &e%name% &akäynnistettiin!"
+  warmup-broadcast: "&6&lKOTH &e%name% &6&lalkaa &e%seconds% &6&lsekunnin kuluttua! Sijainti: &e%location%"
+  begin-broadcast: "&a&lKOTH &e%name% &a&lalkoi! Valtaa piste ja voita!"
+  begin-title: "&6&lKOTH ALKOI"
+  begin-subtitle: "&e%name%"
+
+stop:
+  usage: "&cKäyttö: /koth stop <nimi>"
+  not-running: "&cKOTH &e%name% &cei ole tällä hetkellä käynnissä."
+  success: "&aKOTH &e%name% &apysäytettiin."
+  broadcast: "&c&lYlläpitäjä pysäytti KOTH:n &e%name% &c&lväkisin."
+
+capture:
+  entered-zone: "&eSaavuit &6%name% &evaltausalueelle."
+  left-zone: "&ePoistuit &6%name% &evaltausalueelta."
+  progress-actionbar: "&6Vallataan %name%: &e%progress%%% &7(%time%s jäljellä)"
+  progress-bossbar: "&6%name% &7- &e%progress%%%"
+  contested: "&cPiste on kiistanalainen! Valtaus keskeytetty."
+  decaying: "&7Kukaan ei pidä pistettä hallussaan. Edistyminen laskee: &e%progress%%%"
+  need-team: "&cSinun täytyy olla joukkueessa vallataksesi tämän pisteen."
+  wrong-region-owner: "&7Tätä pistettä hallitsee tällä hetkellä &e%owner%&7."
+
+win:
+  broadcast: "&6&l%player% &e&lvalloitti &6&l%name%&e&l ja voitti KOTH-tapahtuman!"
+  broadcast-team: "&6&lJoukkue %team% &e&lvalloitti &6&l%name%&e&l ja voitti KOTH-tapahtuman!"
+  title: "&6&lVOITTO!"
+  subtitle: "&eValloitit kohteen %name%!"
+  personal-message: "&aOnnittelut! Voitit KOTH-tapahtuman kohteessa &e%name%&a."
+  rewards-given: "&aPalkintosi on myönnetty."
+
+end:
+  no-winner-broadcast: "&7KOTH &e%name% &7päättyi ilman voittajaa."
+  timeout-broadcast: "&7KOTH &e%name% &7aikakatkaistiin."
+
+info:
+  header: "&8&m----&r &6&lKOTH: %name% &8&m----"
+  state: "&7Tila: &e%state%"
+  world: "&7Maailma: &e%world%"
+  capture-time: "&7Valtausaika: &e%time%s"
+  warmup-time: "&7Odotusaika: &e%time%s"
+  owner: "&7Nykyinen omistaja: &e%owner%"
+  wins: "&7Valtauksia yhteensä: &e%wins%"
+  rewards-count: "&7Palkintokomennot: &e%count%"
+
+list:
+  header: "&8&m----&r &6&lKOTH-pisteet &8&m----"
+  entry: "&e%name% &7- &f%state%"
+
+top:
+  header: "&8&m----&r &6&lKOTH-tulostaulukko &8&m----"
+  entry: "&e#%rank% &f%player% &7- &6%wins% voittoa"
+  empty: "&7Tilastoja ei ole vielä kirjattu."
+  your-rank: "&7Sijoituksesi: &e#%rank% &7(&6%wins% voittoa&7)"
+
+gui:
+  title: "&8&lKOTH-valikko"
+  item-name: "&6&l%name%"
+  item-lore-state: "&7Tila: &e%state%"
+  item-lore-world: "&7Maailma: &e%world%"
+  item-lore-click: "&eKlikkaa teleporttaaksesi"
+  admin-title: "&8&lKOTH-ylläpitopaneeli"
+  no-koths: "&7Ei näytettäviä KOTH-pisteitä."
+  back-button: "&cTakaisin"
+  next-page: "&aSeuraava sivu"
+  prev-page: "&aEdellinen sivu"
+
+states:
+  disabled: "Poissa käytöstä"
+  waiting: "Odottaa"
+  warmup: "Alkaa pian"
+  active: "Aktiivinen"
+  capturing: "Vallataan"
+  captured: "Vallattu"
+  ending: "Päättymässä"
+
+reward:
+  added: "&aPalkintokomento lisätty kohteeseen &e%name%&a."
+  removed: "&aPalkintokomento poistettu kohteesta &e%name%&a."
+  usage-add: "&cKäyttö: /koth setreward <nimi> <komento>"
+
+lang:
+  changed: "&aLiitännäisen kieli vaihdettiin kieleksi &e%lang%&a."
+  invalid: "&cTuntematon kielikoodi &e%lang%&c. Saatavilla: &e%available%"
+  usage: "&cKäyttö: /koth setlang <koodi>"
+
+placeholder:
+  no-active-koth: "Ei mikään"

@@ -1,0 +1,139 @@
+# Kalba: Lietuvių (lt)
+prefix: "&8[&6KOTH&8] &r"
+
+general:
+  no-permission: "&cNeturi teisės tai daryti."
+  player-only: "&cŠią komandą gali naudoti tik žaidėjas."
+  unknown-command: "&cNežinoma komanda. Naudok &e/koth help&c komandų sąrašui."
+  reload-success: "&aKonfigūracija ir kalbos failai buvo perkrauti."
+  invalid-number: "&cTai nėra tinkamas skaičius."
+  feature-disabled: "&cŠi funkcija šiuo metu išjungta konfigūracijoje."
+  no-koths-found: "&cKol kas nesukurtas nė vienas KOTH taškas."
+  koth-not-found: "&cKOTH taškas pavadinimu &e%name% &cnerastas."
+  koth-already-exists: "&cKOTH taškas pavadinimu &e%name% &cjau egzistuoja."
+
+command:
+  help-header: "&8&m----&r &6&lKOTH Pagalba &8&m----"
+  help-create: "&e/koth create <pavadinimas> &7- Sukuria naują KOTH tašką"
+  help-delete: "&e/koth delete <pavadinimas> &7- Ištrina KOTH tašką"
+  help-setpos1: "&e/koth setpos1 <pavadinimas> &7- Nustato pirmąjį užgrobimo zonos kampą"
+  help-setpos2: "&e/koth setpos2 <pavadinimas> &7- Nustato antrąjį užgrobimo zonos kampą"
+  help-setcapturepoint: "&e/koth setcapturepoint <pavadinimas> &7- Nustato užgrobimo taško vietą"
+  help-start: "&e/koth start <pavadinimas> &7- Paleidžia KOTH renginį"
+  help-stop: "&e/koth stop <pavadinimas> &7- Priverstinai sustabdo vykstantį KOTH renginį"
+  help-list: "&e/koth list &7- Rodo visų KOTH taškų sąrašą"
+  help-info: "&e/koth info <pavadinimas> &7- Rodo informaciją apie KOTH tašką"
+  help-tp: "&e/koth tp <pavadinimas> &7- Persikelia į KOTH tašką"
+  help-top: "&e/koth top &7- Rodo lyderių lentelę"
+  help-gui: "&e/koth gui &7- Atidaro KOTH meniu"
+  help-reload: "&e/koth reload &7- Perkrauna papildinio konfigūraciją"
+  help-setwarmup: "&e/koth setwarmup <pavadinimas> <sekundės> &7- Nustato laukimo laiką prieš pradžią"
+  help-setcapturetime: "&e/koth setcapturetime <pavadinimas> <sekundės> &7- Nustato užgrobimo laiką"
+  help-setreward: "&e/koth setreward <pavadinimas> <komanda> &7- Prideda apdovanojimo komandą"
+  help-setlang: "&e/koth setlang <kodas> &7- Pakeičia papildinio kalbą"
+
+create:
+  success: "&aKOTH taškas &e%name% &asėkmingai sukurtas."
+  usage: "&cNaudojimas: /koth create <pavadinimas>"
+
+delete:
+  success: "&aKOTH taškas &e%name% &aištrintas."
+  usage: "&cNaudojimas: /koth delete <pavadinimas>"
+  confirm: "&ePakartok komandą per 10 sekundžių, kad patvirtintum ištrynimą."
+
+setpos:
+  pos1-set: "&a1 pozicija &e%name% &anustatyta pagal tavo buvimo vietą."
+  pos2-set: "&a2 pozicija &e%name% &anustatyta pagal tavo buvimo vietą."
+  capturepoint-set: "&aUžgrobimo taškas &e%name% &anustatytas pagal tavo buvimo vietą."
+
+start:
+  usage: "&cNaudojimas: /koth start <pavadinimas>"
+  already-running: "&cKOTH &e%name% &cjau vyksta."
+  missing-region: "&cPrieš pradedant reikia nustatyti abi pozicijas ir užgrobimo tašką."
+  success: "&aKOTH &e%name% &abuvo paleistas!"
+  warmup-broadcast: "&6&lKOTH &e%name% &6&lprasidės po &e%seconds% &6&lsekundžių! Vieta: &e%location%"
+  begin-broadcast: "&a&lKOTH &e%name% &a&lprasidėjo! Užgrobk tašką ir laimėk!"
+  begin-title: "&6&lKOTH PRASIDĖJO"
+  begin-subtitle: "&e%name%"
+
+stop:
+  usage: "&cNaudojimas: /koth stop <pavadinimas>"
+  not-running: "&cKOTH &e%name% &cšiuo metu nevyksta."
+  success: "&aKOTH &e%name% &abuvo sustabdytas."
+  broadcast: "&c&lAdministratorius priverstinai sustabdė KOTH &e%name%&c&l."
+
+capture:
+  entered-zone: "&eĮėjai į &6%name% &eužgrobimo zoną."
+  left-zone: "&ePalikai &6%name% &eužgrobimo zoną."
+  progress-actionbar: "&6Užgrobiama %name%: &e%progress%%% &7(liko %time%s)"
+  progress-bossbar: "&6%name% &7- &e%progress%%%"
+  contested: "&cTaškas ginčijamas! Užgrobimas pristabdytas."
+  decaying: "&7Niekas nelaiko taško. Progresas mažėja: &e%progress%%%"
+  need-team: "&cTurite priklausyti komandai, kad užgrobtumėte šį tašką."
+  wrong-region-owner: "&7Šį tašką šiuo metu kontroliuoja &e%owner%&7."
+
+win:
+  broadcast: "&6&l%player% &e&lužgrobė &6&l%name%&e&l ir laimėjo KOTH renginį!"
+  broadcast-team: "&6&lKomanda %team% &e&lužgrobė &6&l%name%&e&l ir laimėjo KOTH renginį!"
+  title: "&6&lPERGALĖ!"
+  subtitle: "&eUžgrobei %name%!"
+  personal-message: "&aSveikiname! Laimėjai KOTH renginį vietoje &e%name%&a."
+  rewards-given: "&aTavo apdovanojimai buvo suteikti."
+
+end:
+  no-winner-broadcast: "&7KOTH &e%name% &7baigėsi be nugalėtojo."
+  timeout-broadcast: "&7KOTH &e%name% &7baigėsi laikui pasibaigus."
+
+info:
+  header: "&8&m----&r &6&lKOTH: %name% &8&m----"
+  state: "&7Būsena: &e%state%"
+  world: "&7Pasaulis: &e%world%"
+  capture-time: "&7Užgrobimo laikas: &e%time%s"
+  warmup-time: "&7Laukimo laikas: &e%time%s"
+  owner: "&7Dabartinis savininkas: &e%owner%"
+  wins: "&7Iš viso užgrobimų: &e%wins%"
+  rewards-count: "&7Apdovanojimo komandos: &e%count%"
+
+list:
+  header: "&8&m----&r &6&lKOTH taškai &8&m----"
+  entry: "&e%name% &7- &f%state%"
+
+top:
+  header: "&8&m----&r &6&lKOTH lyderių lentelė &8&m----"
+  entry: "&e#%rank% &f%player% &7- &6%wins% pergalių"
+  empty: "&7Kol kas statistika neužfiksuota."
+  your-rank: "&7Tavo vieta: &e#%rank% &7(&6%wins% pergalių&7)"
+
+gui:
+  title: "&8&lKOTH meniu"
+  item-name: "&6&l%name%"
+  item-lore-state: "&7Būsena: &e%state%"
+  item-lore-world: "&7Pasaulis: &e%world%"
+  item-lore-click: "&eSpausk, kad persikeltum"
+  admin-title: "&8&lKOTH administravimo skydelis"
+  no-koths: "&7Nėra rodytinų KOTH taškų."
+  back-button: "&cAtgal"
+  next-page: "&aKitas puslapis"
+  prev-page: "&aAnkstesnis puslapis"
+
+states:
+  disabled: "Išjungta"
+  waiting: "Laukiama"
+  warmup: "Netrukus prasidės"
+  active: "Aktyvus"
+  capturing: "Užgrobiama"
+  captured: "Užgrobta"
+  ending: "Baigiasi"
+
+reward:
+  added: "&aApdovanojimo komanda pridėta prie &e%name%&a."
+  removed: "&aApdovanojimo komanda pašalinta iš &e%name%&a."
+  usage-add: "&cNaudojimas: /koth setreward <pavadinimas> <komanda>"
+
+lang:
+  changed: "&aPapildinio kalba pakeista į &e%lang%&a."
+  invalid: "&cNežinomas kalbos kodas &e%lang%&c. Galimi: &e%available%"
+  usage: "&cNaudojimas: /koth setlang <kodas>"
+
+placeholder:
+  no-active-koth: "Nėra"

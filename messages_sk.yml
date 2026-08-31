@@ -1,0 +1,139 @@
+# Jazyk: Slovenčina (sk)
+prefix: "&8[&6KOTH&8] &r"
+
+general:
+  no-permission: "&cNemáš oprávnenie na túto akciu."
+  player-only: "&cTento príkaz môže použiť iba hráč."
+  unknown-command: "&cNeznámy príkaz. Použi &e/koth help&c pre zoznam príkazov."
+  reload-success: "&aKonfigurácia a jazykové súbory boli znovu načítané."
+  invalid-number: "&cToto nie je platné číslo."
+  feature-disabled: "&cTáto funkcia je v konfigurácii momentálne vypnutá."
+  no-koths-found: "&cZatiaľ nebol vytvorený žiadny KOTH bod."
+  koth-not-found: "&cKOTH bod s názvom &e%name% &cnebol nájdený."
+  koth-already-exists: "&cKOTH bod s názvom &e%name% &cuž existuje."
+
+command:
+  help-header: "&8&m----&r &6&lPomoc KOTH &8&m----"
+  help-create: "&e/koth create <názov> &7- Vytvorí nový KOTH bod"
+  help-delete: "&e/koth delete <názov> &7- Zmaže KOTH bod"
+  help-setpos1: "&e/koth setpos1 <názov> &7- Nastaví prvý roh capture zóny"
+  help-setpos2: "&e/koth setpos2 <názov> &7- Nastaví druhý roh capture zóny"
+  help-setcapturepoint: "&e/koth setcapturepoint <názov> &7- Nastaví polohu vlajky/capture bodu"
+  help-start: "&e/koth start <názov> &7- Spustí KOTH event"
+  help-stop: "&e/koth stop <názov> &7- Násilne ukončí prebiehajúci KOTH event"
+  help-list: "&e/koth list &7- Vypíše všetky KOTH body"
+  help-info: "&e/koth info <názov> &7- Zobrazí informácie o KOTH bode"
+  help-tp: "&e/koth tp <názov> &7- Teleportuje sa na KOTH bod"
+  help-top: "&e/koth top &7- Zobrazí rebríček hráčov"
+  help-gui: "&e/koth gui &7- Otvorí KOTH menu"
+  help-reload: "&e/koth reload &7- Znovu načíta konfiguráciu pluginu"
+  help-setwarmup: "&e/koth setwarmup <názov> <sekundy> &7- Nastaví čas odpočtu pred štartom"
+  help-setcapturetime: "&e/koth setcapturetime <názov> <sekundy> &7- Nastaví čas potrebný na capture"
+  help-setreward: "&e/koth setreward <názov> <príkaz> &7- Pridá odmeňovací príkaz"
+  help-setlang: "&e/koth setlang <kód> &7- Zmení jazyk pluginu"
+
+create:
+  success: "&aKOTH bod &e%name% &abol úspešne vytvorený."
+  usage: "&cPoužitie: /koth create <názov>"
+
+delete:
+  success: "&aKOTH bod &e%name% &abol zmazaný."
+  usage: "&cPoužitie: /koth delete <názov>"
+  confirm: "&eSpusti príkaz znova do 10 sekúnd pre potvrdenie zmazania."
+
+setpos:
+  pos1-set: "&aPozícia 1 pre &e%name% &abola nastavená na tvoju polohu."
+  pos2-set: "&aPozícia 2 pre &e%name% &abola nastavená na tvoju polohu."
+  capturepoint-set: "&aCapture bod pre &e%name% &abol nastavený na tvoju polohu."
+
+start:
+  usage: "&cPoužitie: /koth start <názov>"
+  already-running: "&cKOTH &e%name% &cuž prebieha."
+  missing-region: "&cPred spustením musíš nastaviť obe pozície a capture bod."
+  success: "&aKOTH &e%name% &abol spustený!"
+  warmup-broadcast: "&6&lKOTH &e%name% &6&lzačína o &e%seconds% &6&lsekúnd! Lokácia: &e%location%"
+  begin-broadcast: "&a&lKOTH &e%name% &a&lzačal! Obsaď bod a vyhraj!"
+  begin-title: "&6&lKOTH ZAČAL"
+  begin-subtitle: "&e%name%"
+
+stop:
+  usage: "&cPoužitie: /koth stop <názov>"
+  not-running: "&cKOTH &e%name% &cmomentálne neprebieha."
+  success: "&aKOTH &e%name% &abol zastavený."
+  broadcast: "&c&lKOTH &e%name% &c&lbol násilne ukončený administrátorom."
+
+capture:
+  entered-zone: "&eVstúpil si do capture zóny &6%name%&e."
+  left-zone: "&eOpustil si capture zónu &6%name%&e."
+  progress-actionbar: "&6Obsadzovanie %name%: &e%progress%%% &7(zostáva %time%s)"
+  progress-bossbar: "&6%name% &7- &e%progress%%%"
+  contested: "&cBod je sporný! Obsadzovanie pozastavené."
+  decaying: "&7Nikto bod nedrží. Postup klesá: &e%progress%%%"
+  need-team: "&cPre obsadenie tohto bodu musíš byť v tíme."
+  wrong-region-owner: "&7Tento bod momentálne ovláda &e%owner%&7."
+
+win:
+  broadcast: "&6&l%player% &e&lobsadil &6&l%name%&e&l a vyhral KOTH event!"
+  broadcast-team: "&6&lTím %team% &e&lobsadil &6&l%name%&e&l a vyhral KOTH event!"
+  title: "&6&lVÍŤAZSTVO!"
+  subtitle: "&eObsadil si %name%!"
+  personal-message: "&aGratulujeme! Vyhral si KOTH event na &e%name%&a."
+  rewards-given: "&aTvoje odmeny boli udelené."
+
+end:
+  no-winner-broadcast: "&7KOTH &e%name% &7skončil bez víťaza."
+  timeout-broadcast: "&7KOTH &e%name% &7vypršal časový limit."
+
+info:
+  header: "&8&m----&r &6&lKOTH: %name% &8&m----"
+  state: "&7Stav: &e%state%"
+  world: "&7Svet: &e%world%"
+  capture-time: "&7Čas capture: &e%time%s"
+  warmup-time: "&7Doba odpočtu: &e%time%s"
+  owner: "&7Aktuálny vlastník: &e%owner%"
+  wins: "&7Celkom obsadení: &e%wins%"
+  rewards-count: "&7Odmeňovacie príkazy: &e%count%"
+
+list:
+  header: "&8&m----&r &6&lKOTH body &8&m----"
+  entry: "&e%name% &7- &f%state%"
+
+top:
+  header: "&8&m----&r &6&lRebríček KOTH &8&m----"
+  entry: "&e#%rank% &f%player% &7- &6%wins% výhier"
+  empty: "&7Zatiaľ nie sú zaznamenané žiadne štatistiky."
+  your-rank: "&7Tvoje poradie: &e#%rank% &7(&6%wins% výhier&7)"
+
+gui:
+  title: "&8&lKOTH Menu"
+  item-name: "&6&l%name%"
+  item-lore-state: "&7Stav: &e%state%"
+  item-lore-world: "&7Svet: &e%world%"
+  item-lore-click: "&eKlikni pre teleportáciu"
+  admin-title: "&8&lKOTH Admin Panel"
+  no-koths: "&7Nie sú tu žiadne KOTH body na zobrazenie."
+  back-button: "&cSpäť"
+  next-page: "&aĎalšia strana"
+  prev-page: "&aPredchádzajúca strana"
+
+states:
+  disabled: "Vypnuté"
+  waiting: "Čaká"
+  warmup: "Čoskoro začína"
+  active: "Aktívny"
+  capturing: "Obsadzuje sa"
+  captured: "Obsadené"
+  ending: "Končí"
+
+reward:
+  added: "&aOdmeňovací príkaz bol pridaný k &e%name%&a."
+  removed: "&aOdmeňovací príkaz bol odobraný z &e%name%&a."
+  usage-add: "&cPoužitie: /koth setreward <názov> <príkaz>"
+
+lang:
+  changed: "&aJazyk pluginu bol zmenený na &e%lang%&a."
+  invalid: "&cNeznámy kód jazyka &e%lang%&c. Dostupné: &e%available%"
+  usage: "&cPoužitie: /koth setlang <kód>"
+
+placeholder:
+  no-active-koth: "Žiadny"

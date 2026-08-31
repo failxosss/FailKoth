@@ -1,0 +1,139 @@
+# Limbă: Română (ro)
+prefix: "&8[&6KOTH&8] &r"
+
+general:
+  no-permission: "&cNu ai permisiunea să faci asta."
+  player-only: "&cAceastă comandă poate fi folosită doar de un jucător."
+  unknown-command: "&cComandă necunoscută. Folosește &e/koth help&c pentru lista de comenzi."
+  reload-success: "&aConfigurația și fișierele de limbă au fost reîncărcate."
+  invalid-number: "&cAcesta nu este un număr valid."
+  feature-disabled: "&cAceastă funcție este momentan dezactivată în configurație."
+  no-koths-found: "&cNu a fost creat încă niciun punct KOTH."
+  koth-not-found: "&cUn punct KOTH numit &e%name% &cnu a fost găsit."
+  koth-already-exists: "&cUn punct KOTH numit &e%name% &cexistă deja."
+
+command:
+  help-header: "&8&m----&r &6&lAjutor KOTH &8&m----"
+  help-create: "&e/koth create <nume> &7- Creează un punct KOTH nou"
+  help-delete: "&e/koth delete <nume> &7- Șterge un punct KOTH"
+  help-setpos1: "&e/koth setpos1 <nume> &7- Setează primul colț al zonei de capturare"
+  help-setpos2: "&e/koth setpos2 <nume> &7- Setează al doilea colț al zonei de capturare"
+  help-setcapturepoint: "&e/koth setcapturepoint <nume> &7- Setează locația punctului de capturare"
+  help-start: "&e/koth start <nume> &7- Pornește un eveniment KOTH"
+  help-stop: "&e/koth stop <nume> &7- Oprește forțat un eveniment KOTH în desfășurare"
+  help-list: "&e/koth list &7- Listează toate punctele KOTH"
+  help-info: "&e/koth info <nume> &7- Afișează informații despre un punct KOTH"
+  help-tp: "&e/koth tp <nume> &7- Te teleportează la un punct KOTH"
+  help-top: "&e/koth top &7- Afișează clasamentul"
+  help-gui: "&e/koth gui &7- Deschide meniul KOTH"
+  help-reload: "&e/koth reload &7- Reîncarcă configurația pluginului"
+  help-setwarmup: "&e/koth setwarmup <nume> <secunde> &7- Setează timpul de așteptare înainte de start"
+  help-setcapturetime: "&e/koth setcapturetime <nume> <secunde> &7- Setează timpul de capturare"
+  help-setreward: "&e/koth setreward <nume> <comandă> &7- Adaugă o comandă de recompensă"
+  help-setlang: "&e/koth setlang <cod> &7- Schimbă limba pluginului"
+
+create:
+  success: "&aPunctul KOTH &e%name% &aa fost creat cu succes."
+  usage: "&cUtilizare: /koth create <nume>"
+
+delete:
+  success: "&aPunctul KOTH &e%name% &aa fost șters."
+  usage: "&cUtilizare: /koth delete <nume>"
+  confirm: "&eRulează din nou comanda în decurs de 10 secunde pentru a confirma ștergerea."
+
+setpos:
+  pos1-set: "&aPoziția 1 pentru &e%name% &aa fost setată la locația ta."
+  pos2-set: "&aPoziția 2 pentru &e%name% &aa fost setată la locația ta."
+  capturepoint-set: "&aPunctul de capturare pentru &e%name% &aa fost setat la locația ta."
+
+start:
+  usage: "&cUtilizare: /koth start <nume>"
+  already-running: "&cKOTH &e%name% &crulează deja."
+  missing-region: "&cTrebuie să setezi ambele poziții și un punct de capturare înainte de a porni."
+  success: "&aKOTH &e%name% &aa fost pornit!"
+  warmup-broadcast: "&6&lKOTH &e%name% &6&lîncepe în &e%seconds% &6&lsecunde! Locație: &e%location%"
+  begin-broadcast: "&a&lKOTH &e%name% &a&la început! Capturează punctul și câștigă!"
+  begin-title: "&6&lKOTH A ÎNCEPUT"
+  begin-subtitle: "&e%name%"
+
+stop:
+  usage: "&cUtilizare: /koth stop <nume>"
+  not-running: "&cKOTH &e%name% &cnu rulează în prezent."
+  success: "&aKOTH &e%name% &aa fost oprit."
+  broadcast: "&c&lKOTH &e%name% &c&la fost oprit forțat de un administrator."
+
+capture:
+  entered-zone: "&eAi intrat în zona de capturare a &6%name%&e."
+  left-zone: "&eAi părăsit zona de capturare a &6%name%&e."
+  progress-actionbar: "&6Capturare %name%: &e%progress%%% &7(%time%s rămase)"
+  progress-bossbar: "&6%name% &7- &e%progress%%%"
+  contested: "&cPunctul este disputat! Capturarea a fost pusă pe pauză."
+  decaying: "&7Nimeni nu deține punctul. Progresul scade: &e%progress%%%"
+  need-team: "&cTrebuie să fii într-o echipă pentru a captura acest punct."
+  wrong-region-owner: "&7Acest punct este controlat în prezent de &e%owner%&7."
+
+win:
+  broadcast: "&6&l%player% &e&la capturat &6&l%name%&e&l și a câștigat evenimentul KOTH!"
+  broadcast-team: "&6&lEchipa %team% &e&la capturat &6&l%name%&e&l și a câștigat evenimentul KOTH!"
+  title: "&6&lVICTORIE!"
+  subtitle: "&eAi capturat %name%!"
+  personal-message: "&aFelicitări! Ai câștigat evenimentul KOTH la &e%name%&a."
+  rewards-given: "&aRecompensele tale au fost acordate."
+
+end:
+  no-winner-broadcast: "&7KOTH &e%name% &7s-a încheiat fără câștigător."
+  timeout-broadcast: "&7KOTH &e%name% &7a expirat."
+
+info:
+  header: "&8&m----&r &6&lKOTH: %name% &8&m----"
+  state: "&7Stare: &e%state%"
+  world: "&7Lume: &e%world%"
+  capture-time: "&7Timp de capturare: &e%time%s"
+  warmup-time: "&7Timp de așteptare: &e%time%s"
+  owner: "&7Deținător curent: &e%owner%"
+  wins: "&7Total capturări: &e%wins%"
+  rewards-count: "&7Comenzi de recompensă: &e%count%"
+
+list:
+  header: "&8&m----&r &6&lPuncte KOTH &8&m----"
+  entry: "&e%name% &7- &f%state%"
+
+top:
+  header: "&8&m----&r &6&lClasament KOTH &8&m----"
+  entry: "&e#%rank% &f%player% &7- &6%wins% victorii"
+  empty: "&7Încă nu au fost înregistrate statistici."
+  your-rank: "&7Poziția ta: &e#%rank% &7(&6%wins% victorii&7)"
+
+gui:
+  title: "&8&lMeniu KOTH"
+  item-name: "&6&l%name%"
+  item-lore-state: "&7Stare: &e%state%"
+  item-lore-world: "&7Lume: &e%world%"
+  item-lore-click: "&eApasă pentru teleportare"
+  admin-title: "&8&lPanou Admin KOTH"
+  no-koths: "&7Nu există puncte KOTH de afișat."
+  back-button: "&cÎnapoi"
+  next-page: "&aPagina următoare"
+  prev-page: "&aPagina anterioară"
+
+states:
+  disabled: "Dezactivat"
+  waiting: "Așteptare"
+  warmup: "Începe curând"
+  active: "Activ"
+  capturing: "Se capturează"
+  captured: "Capturat"
+  ending: "Se încheie"
+
+reward:
+  added: "&aComanda de recompensă a fost adăugată la &e%name%&a."
+  removed: "&aComanda de recompensă a fost eliminată de la &e%name%&a."
+  usage-add: "&cUtilizare: /koth setreward <nume> <comandă>"
+
+lang:
+  changed: "&aLimba pluginului a fost schimbată în &e%lang%&a."
+  invalid: "&cCod de limbă necunoscut &e%lang%&c. Disponibile: &e%available%"
+  usage: "&cUtilizare: /koth setlang <cod>"
+
+placeholder:
+  no-active-koth: "Niciunul"

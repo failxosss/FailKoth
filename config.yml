@@ -1,0 +1,132 @@
+# ==========================================================
+#                     KothPlugin - config.yml
+#   Profesionální King of the Hill plugin pro Paper 1.21+
+# ==========================================================
+
+# Jazyk pluginu. Zde zadej kód jazyka, ve kterém se mají zobrazovat
+# všechny zprávy hráčům. Soubory s překlady najdeš ve složce plugins/KothPlugin/lang/
+# Podporované kódy (můžeš přidat i vlastní messages_<kod>.yml):
+# en, cs, sk, de, pl, ru, uk, fr, es, pt, it, nl, tr, ro, hu, sv, fi, da, no, lt
+language: "cs"
+
+# Pokud hráč nemá žádnou konkrétní jazykovou preferenci, použije se jazyk výše.
+# Lze povolit i per-hráčovský jazyk podle klienta (vyžaduje, aby existoval
+# odpovídající messages_<locale>.yml, jinak se použije výchozí jazyk).
+per-player-language:
+  enabled: false
+
+storage:
+  # Typ úložiště pro statistiky hráčů a KOTH data: YAML nebo MYSQL
+  type: "YAML"
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "kothplugin"
+    username: "root"
+    password: "password"
+    useSSL: false
+    table-prefix: "koth_"
+
+general:
+  # Interval (v tikách, 20 tiků = 1s) jak často se kontroluje capture zóna
+  check-interval-ticks: 20
+  # Automaticky uloží data každých X minut
+  autosave-interval-minutes: 5
+  # Povolit pád itemů/ochranu inventáře po výhře apod. (rozšiřitelné)
+  debug: false
+
+capture:
+  # Výchozí čas potřebný k dokončení capturu (v sekundách), pokud KOTH nemá vlastní
+  default-capture-time: 60
+  # Násobí se rychlost capturu podle počtu hráčů jednoho týmu v zóně (1 = žádný bonus)
+  multi-capture-multiplier: 1.0
+  # Maximální počet hráčů, kteří ještě zrychlují capture (0 = bez limitu)
+  max-capture-boost-players: 3
+  # Pokud je v zóně stejný počet/více znepřátelených hráčů/týmů, capture se zastaví (kontest)
+  contest-enabled: true
+  # Když capture zastaví kvůli kontestu, progres se: "freeze" (zamrzne) nebo "reset" (vynuluje)
+  contest-behaviour: "freeze"
+  # Progres capturu se při odchodu všech hráčů ze zóny postupně vrací zpět (klesá)
+  decay-enabled: true
+  decay-rate-per-second: 1.0
+
+warmup:
+  # Čas před startem KOTH (countdown), v sekundách
+  enabled: true
+  default-seconds: 30
+  broadcast-titles: true
+
+autostart:
+  # Automatické spouštění náhodných KOTH eventů v intervalech
+  enabled: false
+  # Minimální a maximální interval mezi automatickými starty (v minutách)
+  min-interval-minutes: 60
+  max-interval-minutes: 180
+  # Pokud true, vybírá náhodný KOTH z povolených; jinak jde po pořadí
+  random-selection: true
+
+notifications:
+  bossbar:
+    enabled: true
+    color: "YELLOW"
+    style: "SOLID"
+  actionbar:
+    enabled: true
+  title:
+    enabled: true
+  scoreboard:
+    enabled: true
+  chat-broadcast:
+    enabled: true
+    # Broadcast celoserverově i hráčům, kteří nejsou v zóně
+    global: true
+  sound:
+    enabled: true
+    capture-start: "BLOCK_NOTE_BLOCK_PLING"
+    capture-progress: "BLOCK_NOTE_BLOCK_HAT"
+    capture-complete: "UI_TOTEM_USE"
+    koth-start: "ENTITY_ENDER_DRAGON_GROWL"
+
+gui:
+  enabled: true
+  title: "&8&lKOTH Menu"
+  size: 27
+  # Zvuk při otevření/kliknutí v GUI
+  sounds-enabled: true
+
+rewards:
+  # Odměny se udělují vítězi (hráči nebo všem členům vítězného týmu podle koth-typu)
+  broadcast-winner: true
+  give-to-whole-team: true
+
+integrations:
+  vault:
+    enabled: true
+  placeholderapi:
+    enabled: true
+  worldguard:
+    # Pokud povoleno a WorldGuard je nainstalovaný, lze KOTH zóny vytvářet i z WG regionů
+    enabled: false
+  holograms:
+    # Podpora DecentHolograms (pokud je nainstalovaný) pro zobrazení info nad capture bodem
+    enabled: false
+
+teams:
+  # Herní režim: "SOLO" (každý hráč sám za sebe) nebo "TEAM" (podle Scoreboard týmů / permission skupin)
+  mode: "SOLO"
+  # Pokud mode = TEAM a hráč nemá scoreboard tým, spadá do "no-team" a nemůže capture
+  require-team: true
+
+cooldown:
+  # Cooldown (v sekundách) mezi jednotlivými výhrami stejného hráče (0 = vypnuto)
+  win-cooldown-seconds: 0
+  # Cooldown na znovu-vstup do zóny po opuštění (proti spamování in/out)
+  rejoin-cooldown-seconds: 0
+
+anticheat:
+  # Zakázat teleportační příkazy/pluginy (/tpa, enderpearl) v capture zóně během capturu
+  disable-teleport-in-zone: false
+  # Zakázat létání (creative/elytra) v capture zóně
+  disable-flight-in-zone: false
+  # Vyhodit hráče ze zóny při odpojení ze serveru (zabrání AFK exploitu) - odebere progres daného hráče
+  remove-progress-on-quit: true

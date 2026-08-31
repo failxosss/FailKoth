@@ -1,0 +1,38 @@
+name: KothPlugin
+version: '${project.version}'
+main: net.kothplugin.KothPlugin
+api-version: '1.21'
+author: KothPlugin Team
+description: Profesionální King of the Hill (KOTH) plugin s podporou 20 jazyků
+softdepend: [Vault, PlaceholderAPI]
+folia-supported: false
+
+commands:
+  koth:
+    description: Hlavní příkaz KOTH pluginu
+    usage: /koth help
+    permission: koth.use
+    permission-message: "&cNemáš oprávnění k tomuto příkazu."
+
+permissions:
+  koth.*:
+    description: Přístup ke všem právům pluginu
+    default: op
+    children:
+      koth.admin: true
+      koth.use: true
+  koth.admin:
+    description: Administrátorská práva (vytváření, mazání, správa KOTH)
+    default: op
+  koth.use:
+    description: Základní použití příkazu /koth (info, list, top, gui)
+    default: true
+  koth.join:
+    description: Umožňuje účast v KOTH eventech
+    default: true
+  koth.bypass.cooldown:
+    description: Obchází cooldown mezi vstupem do capture zóny
+    default: op
+  koth.notify:
+    description: Dostává administrátorská upozornění (start/konec KOTH i mimo event)
+    default: op

@@ -1,0 +1,139 @@
+# Language: English (en)
+prefix: "&8[&6KOTH&8] &r"
+
+general:
+  no-permission: "&cYou don't have permission to do that."
+  player-only: "&cThis command can only be used by a player."
+  unknown-command: "&cUnknown subcommand. Use &e/koth help&c for a list of commands."
+  reload-success: "&aConfiguration and language files have been reloaded."
+  invalid-number: "&cThat is not a valid number."
+  feature-disabled: "&cThis feature is currently disabled in the config."
+  no-koths-found: "&cNo KOTH points have been created yet."
+  koth-not-found: "&cA KOTH point named &e%name% &cwas not found."
+  koth-already-exists: "&cA KOTH point named &e%name% &calready exists."
+
+command:
+  help-header: "&8&m----&r &6&lKOTH Help &8&m----"
+  help-create: "&e/koth create <name> &7- Create a new KOTH point"
+  help-delete: "&e/koth delete <name> &7- Delete a KOTH point"
+  help-setpos1: "&e/koth setpos1 <name> &7- Set the first corner of the capture zone"
+  help-setpos2: "&e/koth setpos2 <name> &7- Set the second corner of the capture zone"
+  help-setcapturepoint: "&e/koth setcapturepoint <name> &7- Set the flag/capture point location"
+  help-start: "&e/koth start <name> &7- Start a KOTH event"
+  help-stop: "&e/koth stop <name> &7- Force stop a running KOTH event"
+  help-list: "&e/koth list &7- List all KOTH points"
+  help-info: "&e/koth info <name> &7- Show information about a KOTH point"
+  help-tp: "&e/koth tp <name> &7- Teleport to a KOTH point"
+  help-top: "&e/koth top &7- Show the leaderboard"
+  help-gui: "&e/koth gui &7- Open the KOTH menu"
+  help-reload: "&e/koth reload &7- Reload the plugin configuration"
+  help-setwarmup: "&e/koth setwarmup <name> <seconds> &7- Set the warmup time"
+  help-setcapturetime: "&e/koth setcapturetime <name> <seconds> &7- Set the capture time"
+  help-setreward: "&e/koth setreward <name> <command> &7- Add a reward command"
+  help-setlang: "&e/koth setlang <code> &7- Change the plugin language"
+
+create:
+  success: "&aKOTH point &e%name% &awas successfully created."
+  usage: "&cUsage: /koth create <name>"
+
+delete:
+  success: "&aKOTH point &e%name% &awas deleted."
+  usage: "&cUsage: /koth delete <name>"
+  confirm: "&eRun the command again within 10 seconds to confirm deletion."
+
+setpos:
+  pos1-set: "&aPosition 1 for &e%name% &ahas been set to your location."
+  pos2-set: "&aPosition 2 for &e%name% &ahas been set to your location."
+  capturepoint-set: "&aCapture point for &e%name% &ahas been set to your location."
+
+start:
+  usage: "&cUsage: /koth start <name>"
+  already-running: "&cKOTH &e%name% &cis already running."
+  missing-region: "&cYou must set both positions and a capture point before starting this KOTH."
+  success: "&aKOTH &e%name% &ahas been started!"
+  warmup-broadcast: "&6&lKOTH &e%name% &6&lstarts in &e%seconds% &6&lseconds! Location: &e%location%"
+  begin-broadcast: "&a&lKOTH &e%name% &a&lhas begun! Capture the point to win!"
+  begin-title: "&6&lKOTH STARTED"
+  begin-subtitle: "&e%name%"
+
+stop:
+  usage: "&cUsage: /koth stop <name>"
+  not-running: "&cKOTH &e%name% &cis not currently running."
+  success: "&aKOTH &e%name% &ahas been stopped."
+  broadcast: "&c&lKOTH &e%name% &c&lhas been forcefully stopped by an administrator."
+
+capture:
+  entered-zone: "&eYou have entered the capture zone of &6%name%&e."
+  left-zone: "&eYou have left the capture zone of &6%name%&e."
+  progress-actionbar: "&6Capturing %name%: &e%progress%%% &7(%time%s remaining)"
+  progress-bossbar: "&6%name% &7- &e%progress%%%"
+  contested: "&cThe point is contested! Capture paused."
+  decaying: "&7No one is holding the point. Progress is decreasing: &e%progress%%%"
+  need-team: "&cYou must be in a team to capture this point."
+  wrong-region-owner: "&7This point is currently controlled by &e%owner%&7."
+
+win:
+  broadcast: "&6&l%player% &e&lhas captured &6&l%name%&e&l and won the KOTH event!"
+  broadcast-team: "&6&lTeam %team% &e&lhas captured &6&l%name%&e&l and won the KOTH event!"
+  title: "&6&lVICTORY!"
+  subtitle: "&eYou captured %name%!"
+  personal-message: "&aCongratulations! You won the KOTH event at &e%name%&a."
+  rewards-given: "&aYour rewards have been granted."
+
+end:
+  no-winner-broadcast: "&7KOTH &e%name% &7has ended with no winner."
+  timeout-broadcast: "&7KOTH &e%name% &7has timed out."
+
+info:
+  header: "&8&m----&r &6&lKOTH: %name% &8&m----"
+  state: "&7State: &e%state%"
+  world: "&7World: &e%world%"
+  capture-time: "&7Capture time: &e%time%s"
+  warmup-time: "&7Warmup time: &e%time%s"
+  owner: "&7Current owner: &e%owner%"
+  wins: "&7Total captures: &e%wins%"
+  rewards-count: "&7Reward commands: &e%count%"
+
+list:
+  header: "&8&m----&r &6&lKOTH Points &8&m----"
+  entry: "&e%name% &7- &f%state%"
+
+top:
+  header: "&8&m----&r &6&lKOTH Leaderboard &8&m----"
+  entry: "&e#%rank% &f%player% &7- &6%wins% wins"
+  empty: "&7No statistics recorded yet."
+  your-rank: "&7Your rank: &e#%rank% &7(&6%wins% wins&7)"
+
+gui:
+  title: "&8&lKOTH Menu"
+  item-name: "&6&l%name%"
+  item-lore-state: "&7State: &e%state%"
+  item-lore-world: "&7World: &e%world%"
+  item-lore-click: "&eClick to teleport"
+  admin-title: "&8&lKOTH Admin Panel"
+  no-koths: "&7There are no KOTH points to display."
+  back-button: "&cBack"
+  next-page: "&aNext page"
+  prev-page: "&aPrevious page"
+
+states:
+  disabled: "Disabled"
+  waiting: "Waiting"
+  warmup: "Starting soon"
+  active: "Active"
+  capturing: "Being captured"
+  captured: "Captured"
+  ending: "Ending"
+
+reward:
+  added: "&aReward command added to &e%name%&a."
+  removed: "&aReward command removed from &e%name%&a."
+  usage-add: "&cUsage: /koth setreward <name> <command>"
+
+lang:
+  changed: "&aPlugin language has been changed to &e%lang%&a."
+  invalid: "&cUnknown language code &e%lang%&c. Available: &e%available%"
+  usage: "&cUsage: /koth setlang <code>"
+
+placeholder:
+  no-active-koth: "None"

@@ -1,0 +1,139 @@
+# Idioma: Español (es)
+prefix: "&8[&6KOTH&8] &r"
+
+general:
+  no-permission: "&cNo tienes permiso para hacer eso."
+  player-only: "&cEste comando solo puede ser usado por un jugador."
+  unknown-command: "&cComando desconocido. Usa &e/koth help&c para ver la lista de comandos."
+  reload-success: "&aLa configuración y los archivos de idioma se han recargado."
+  invalid-number: "&cEso no es un número válido."
+  feature-disabled: "&cEsta función está actualmente desactivada en la configuración."
+  no-koths-found: "&cAún no se ha creado ningún punto KOTH."
+  koth-not-found: "&cNo se encontró un punto KOTH llamado &e%name%&c."
+  koth-already-exists: "&cYa existe un punto KOTH llamado &e%name%&c."
+
+command:
+  help-header: "&8&m----&r &6&lAyuda KOTH &8&m----"
+  help-create: "&e/koth create <nombre> &7- Crea un nuevo punto KOTH"
+  help-delete: "&e/koth delete <nombre> &7- Elimina un punto KOTH"
+  help-setpos1: "&e/koth setpos1 <nombre> &7- Establece la primera esquina de la zona de captura"
+  help-setpos2: "&e/koth setpos2 <nombre> &7- Establece la segunda esquina de la zona de captura"
+  help-setcapturepoint: "&e/koth setcapturepoint <nombre> &7- Establece la ubicación del punto de captura"
+  help-start: "&e/koth start <nombre> &7- Inicia un evento KOTH"
+  help-stop: "&e/koth stop <nombre> &7- Detiene forzosamente un evento KOTH en curso"
+  help-list: "&e/koth list &7- Lista todos los puntos KOTH"
+  help-info: "&e/koth info <nombre> &7- Muestra información sobre un punto KOTH"
+  help-tp: "&e/koth tp <nombre> &7- Teletransporta a un punto KOTH"
+  help-top: "&e/koth top &7- Muestra la clasificación"
+  help-gui: "&e/koth gui &7- Abre el menú KOTH"
+  help-reload: "&e/koth reload &7- Recarga la configuración del plugin"
+  help-setwarmup: "&e/koth setwarmup <nombre> <segundos> &7- Establece el tiempo de espera antes del inicio"
+  help-setcapturetime: "&e/koth setcapturetime <nombre> <segundos> &7- Establece el tiempo de captura"
+  help-setreward: "&e/koth setreward <nombre> <comando> &7- Añade un comando de recompensa"
+  help-setlang: "&e/koth setlang <código> &7- Cambia el idioma del plugin"
+
+create:
+  success: "&aEl punto KOTH &e%name% &ase ha creado correctamente."
+  usage: "&cUso: /koth create <nombre>"
+
+delete:
+  success: "&aEl punto KOTH &e%name% &aha sido eliminado."
+  usage: "&cUso: /koth delete <nombre>"
+  confirm: "&eEjecuta el comando de nuevo en 10 segundos para confirmar la eliminación."
+
+setpos:
+  pos1-set: "&aLa posición 1 de &e%name% &ase ha establecido en tu ubicación."
+  pos2-set: "&aLa posición 2 de &e%name% &ase ha establecido en tu ubicación."
+  capturepoint-set: "&aEl punto de captura de &e%name% &ase ha establecido en tu ubicación."
+
+start:
+  usage: "&cUso: /koth start <nombre>"
+  already-running: "&cEl KOTH &e%name% &cya está en curso."
+  missing-region: "&cDebes establecer ambas posiciones y un punto de captura antes de iniciar."
+  success: "&a¡El KOTH &e%name% &aha comenzado!"
+  warmup-broadcast: "&6&lEl KOTH &e%name% &6&lcomienza en &e%seconds% &6&lsegundos! Ubicación: &e%location%"
+  begin-broadcast: "&a&l¡El KOTH &e%name% &a&lha comenzado! ¡Captura el punto y gana!"
+  begin-title: "&6&lKOTH INICIADO"
+  begin-subtitle: "&e%name%"
+
+stop:
+  usage: "&cUso: /koth stop <nombre>"
+  not-running: "&cEl KOTH &e%name% &cno está en curso actualmente."
+  success: "&aEl KOTH &e%name% &aha sido detenido."
+  broadcast: "&c&lEl KOTH &e%name% &c&lha sido detenido forzosamente por un administrador."
+
+capture:
+  entered-zone: "&eHas entrado en la zona de captura de &6%name%&e."
+  left-zone: "&eHas salido de la zona de captura de &6%name%&e."
+  progress-actionbar: "&6Capturando %name%: &e%progress%%% &7(quedan %time%s)"
+  progress-bossbar: "&6%name% &7- &e%progress%%%"
+  contested: "&c¡El punto está disputado! Captura en pausa."
+  decaying: "&7Nadie sostiene el punto. El progreso está disminuyendo: &e%progress%%%"
+  need-team: "&cDebes estar en un equipo para capturar este punto."
+  wrong-region-owner: "&7Este punto está actualmente controlado por &e%owner%&7."
+
+win:
+  broadcast: "&6&l%player% &e&lha capturado &6&l%name% &e&ly ganado el evento KOTH!"
+  broadcast-team: "&6&lEl equipo %team% &e&lha capturado &6&l%name% &e&ly ganado el evento KOTH!"
+  title: "&6&l¡VICTORIA!"
+  subtitle: "&e¡Has capturado %name%!"
+  personal-message: "&a¡Felicidades! Has ganado el evento KOTH en &e%name%&a."
+  rewards-given: "&aTus recompensas han sido otorgadas."
+
+end:
+  no-winner-broadcast: "&7El KOTH &e%name% &7ha terminado sin ganador."
+  timeout-broadcast: "&7El KOTH &e%name% &7ha agotado el tiempo."
+
+info:
+  header: "&8&m----&r &6&lKOTH: %name% &8&m----"
+  state: "&7Estado: &e%state%"
+  world: "&7Mundo: &e%world%"
+  capture-time: "&7Tiempo de captura: &e%time%s"
+  warmup-time: "&7Tiempo de espera: &e%time%s"
+  owner: "&7Propietario actual: &e%owner%"
+  wins: "&7Capturas totales: &e%wins%"
+  rewards-count: "&7Comandos de recompensa: &e%count%"
+
+list:
+  header: "&8&m----&r &6&lPuntos KOTH &8&m----"
+  entry: "&e%name% &7- &f%state%"
+
+top:
+  header: "&8&m----&r &6&lClasificación KOTH &8&m----"
+  entry: "&e#%rank% &f%player% &7- &6%wins% victorias"
+  empty: "&7Aún no se han registrado estadísticas."
+  your-rank: "&7Tu posición: &e#%rank% &7(&6%wins% victorias&7)"
+
+gui:
+  title: "&8&lMenú KOTH"
+  item-name: "&6&l%name%"
+  item-lore-state: "&7Estado: &e%state%"
+  item-lore-world: "&7Mundo: &e%world%"
+  item-lore-click: "&eHaz clic para teletransportarte"
+  admin-title: "&8&lPanel de administración KOTH"
+  no-koths: "&7No hay puntos KOTH para mostrar."
+  back-button: "&cAtrás"
+  next-page: "&aPágina siguiente"
+  prev-page: "&aPágina anterior"
+
+states:
+  disabled: "Desactivado"
+  waiting: "Esperando"
+  warmup: "Comienza pronto"
+  active: "Activo"
+  capturing: "Capturando"
+  captured: "Capturado"
+  ending: "Terminando"
+
+reward:
+  added: "&aSe ha añadido un comando de recompensa a &e%name%&a."
+  removed: "&aSe ha eliminado un comando de recompensa de &e%name%&a."
+  usage-add: "&cUso: /koth setreward <nombre> <comando>"
+
+lang:
+  changed: "&aEl idioma del plugin se ha cambiado a &e%lang%&a."
+  invalid: "&cCódigo de idioma desconocido &e%lang%&c. Disponibles: &e%available%"
+  usage: "&cUso: /koth setlang <código>"
+
+placeholder:
+  no-active-koth: "Ninguno"
