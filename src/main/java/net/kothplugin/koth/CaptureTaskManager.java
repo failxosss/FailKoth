@@ -131,6 +131,7 @@ public class CaptureTaskManager {
         if (playersInZone.isEmpty()) {
             handleEmptyZone(koth, secondsPerTick);
             updateBossBarIdle(koth);
+            plugin.getHologramManager().update(koth, "-", "-");
             return;
         }
 
@@ -179,6 +180,7 @@ public class CaptureTaskManager {
             plugin.getLangManager().send(p, "capture.contested");
         }
         updateBossBarContested(koth);
+        plugin.getHologramManager().update(koth, "Boj o bod!", "-");
     }
 
     private void handleEmptyZone(Koth koth, double secondsPerTick) {
@@ -226,6 +228,10 @@ public class CaptureTaskManager {
             Bukkit.getPluginManager().callEvent(new KothCaptureProgressEvent(koth, p, koth.getProgress()));
         }
         updateBossBarProgress(koth, playersInZone);
+
+        String holderLabel = teamMode ? team : playersInZone.get(0).getName();
+        int remainingForHologram = (int) Math.ceil(((100 - koth.getProgress()) / 100.0) * captureTime);
+        plugin.getHologramManager().update(koth, holderLabel, Math.max(0, remainingForHologram) + "s");
 
         if (plugin.getConfigManager().isSoundEnabled()) {
             for (Player p : playersInZone) {
@@ -277,6 +283,7 @@ public class CaptureTaskManager {
 
         plugin.getStatsManager().recordWin(winner.getUniqueId(), winner.getName());
         removeBossBar(koth);
+        plugin.getHologramManager().remove(koth);
         cancelCapture(koth);
 
         // krátká "ending" fáze, poté návrat do WAITING
@@ -369,6 +376,7 @@ public class CaptureTaskManager {
         cancelWarmup(koth);
         cancelCapture(koth);
         removeBossBar(koth);
+        plugin.getHologramManager().remove(koth);
     }
 
     public void shutdownAll() {
