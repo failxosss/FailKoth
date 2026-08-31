@@ -123,6 +123,7 @@ public class KothManager {
         Bukkit.getPluginManager().callEvent(new KothStartEvent(koth));
         broadcastStart(koth);
         plugin.getCaptureTaskManager().scheduleCapture(koth);
+        plugin.getHologramManager().spawn(koth);
     }
 
     public boolean stop(Koth koth) {
@@ -130,6 +131,7 @@ public class KothManager {
             return false;
         }
         plugin.getCaptureTaskManager().forceStop(koth);
+        plugin.getHologramManager().remove(koth);
         koth.setState(KothState.WAITING);
         koth.resetRuntime();
         Bukkit.getPluginManager().callEvent(new KothEndEvent(koth, false));
